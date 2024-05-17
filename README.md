@@ -40,7 +40,7 @@ Los usuarios objetivo de nuestra aplicación son toda persona mayor de 18 años,
 
 <!-- Logo -->
 ### :art: Logo
-![Logo](assets/Logo.jpg)
+![Logo](assets/logo.jpg)
 
 <!-- ejemplo de aplicacion -->
 ### :iphone: Ejemplo de aplicación
