@@ -66,7 +66,7 @@ Como administrador, quiero eliminar productos que ya no están disponibles o que
 
 ## Diagrama Entidad-Relación :scroll:
 <!-- Insertamos la imagen ER-Model.png -->
-![ER-Model](assets/ER-Model.png)
+![ER-Model](assets/ER_Model.png)
 
 ## Diseño Web :computer:
 
