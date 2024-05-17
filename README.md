@@ -10,7 +10,7 @@ El proyecto consistirá en el desarrollo de una plataforma de comercio electrón
 - ¿Cuál es el fin o la utilidad del proyecto?
 El fin de nuestro proyecto es desarrollar un e-commerce de licores que permita brindar a nuestros clientes una experiencia de navegación eficiente y segura, en donde sean capaces de buscar, seleccionar y comprar productos en línea con una interfaz que facilite estas acciones, simplificando el proceso de compra.
 - ¿Quiénes son los usuarios objetivo de su aplicación?
-Los usuarios objetivo de nuestra aplicación son toda persona mayor de 18 años, ya sea de genero femenino o masculino, que sea consumidora de licores o bebidas alcoholicas, y que este buscando una plataforma comoda, eficiente, con variedad y calidad de productos para su consumo.
+Los usuarios objetivo de nuestra aplicación son toda persona mayor de 18 años, ya sea de género femenino o masculino, que sea consumidora de licores o bebidas alcohólicas, y que este buscando una plataforma cómoda, eficiente, con variedad y calidad de productos para su consumo.
 ## Historia de Usuarios :busts_in_silhouette:
 
 #### 1. Visualización de producto
