@@ -28,6 +28,7 @@ Los usuarios objetivo de nuestra aplicación son toda persona mayor de 18 años,
 ### :art: Documento de diseño
 ![Paleta de colores](assets/Design/PrincipalColors.png)
 ![Paleta de colores](assets/Design/SecondaryColors.png)
+![Paleta de colores](assets/Design/Neutral_Alert.png)
 ![Paleta de colores](assets/Design/Typography.png)
 
 
