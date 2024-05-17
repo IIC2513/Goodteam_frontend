@@ -36,7 +36,7 @@ Los usuarios objetivo de nuestra aplicación son toda persona mayor de 18 años,
 ### :mag: Vistas principales
 ![Paleta de colores](assets/Views/ResponsiveDesign1.png)
 ![Paleta de colores](assets/Views/ResponsiveDesign2.png)
-![Paleta de colores](assets/Views/ResponsiveDesign3.jpg)
+![Paleta de colores](assets/Views/ResponsiveDesign3.png)
 
 <!-- Logo -->
 ### :art: Logo
