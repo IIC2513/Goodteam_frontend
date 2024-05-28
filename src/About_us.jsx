@@ -1,11 +1,15 @@
+import './About_us.css'
+import Board from './Board.jsx'
 
 function About_us() {
     return (
-        <>
-        <h1>About us</h1>
-        <p>Aguante Goodteam
-        </p>
-        </>
+        <div className='fondo'>
+            <div className='content'>
+                <h1>About us</h1>
+                <p>Aguante Goodteam</p>
+                <Board />
+            </div>
+        </div>
     )
 }
 
