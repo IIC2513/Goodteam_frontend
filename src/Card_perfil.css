@@ -4,20 +4,37 @@
     transition: 0.3s;
     border-radius: 5px;
     margin: 10px;
-    background-color: #5CC0F2;
+    background-color: #f5f5f5;
+    border: 2px solid #0a0a0a;
 }
 
 .card-container{
     display: flex;
     flex-direction: column;
     width: 200px;
-    height: 180px;
+    height: 300px;
     justify-content: space-between;
-    padding: 2px;
+    padding: 5px;
     margin: 2px;
 }
 
-.card img {
+.card-img {
     height: 150px;
     padding: 1.5em;
+}
+
+.button {
+    background: linear-gradient(135deg, #5cc0f2, #a1daf7); /* Gradiente de fondo */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    color: white; /* Color del texto */
+    cursor: pointer; /* Cambio de cursor al pasar el mouse */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight: 600; /* Grosor de la fuente */
+    padding: 12px 24px; /* Relleno interno */
+    text-align: center; /* Alineación del texto */
+    text-transform: uppercase; /* Transformación del texto a mayúsculas */
+    transition: all 0.3s ease; /* Transición para efectos suaves */
+    outline: none; /* Sin contorno al enfocarse */
 }

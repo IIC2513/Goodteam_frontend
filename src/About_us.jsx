@@ -3,13 +3,19 @@ import Board from './Board.jsx'
 
 function About_us() {
     return (
-        <div className='fondo'>
-            <div className='content'>
-                <h1>About us</h1>
-                <p>Aguante Goodteam</p>
-                <Board />
+        <div className='content'>
+            <h1>About us</h1>
+            <div className='intro'>
+                <p>Somos una empresa comprometida con...</p>
             </div>
+            <div className='equipo'>
+                <h2>
+                    Nuestro Equipo:
+                </h2>
+            </div>
+            <Board />
         </div>
+
     )
 }
 
