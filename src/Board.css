@@ -1,0 +1,10 @@
+.board {
+    display: table;
+    background-color: #F3DFB9;
+    padding: 20px;
+}
+
+.board-row {
+    display: flex;
+    flex-direction: row;
+}
