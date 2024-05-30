@@ -1,0 +1,43 @@
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  .hero-image {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+  }
+  
+  .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .hero h1 {
+    font-size: 3em;
+    margin: 0;
+  }
+  
+  .hero p {
+    font-size: 1.5em;
+  }
+  
+  .cta-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #DAA520; /* Color secundario (dorado) */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cta-button:hover {
+    background-color: #b58e18;
+  }
+  

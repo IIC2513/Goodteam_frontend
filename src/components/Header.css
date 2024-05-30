@@ -1,0 +1,47 @@
+.header {
+  background-color: #F3DFB9;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  border: 10px solid #CCB27B;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header__logo img {
+  height: 50px;
+}
+
+.header__nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.header__nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.header__nav a:hover {
+  color: #61dafb;
+}
+
+.header__buttons button {
+  background-color: #7B3F00; /* Color primario (vino tinto) */
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header__buttons button:hover {
+  background-color: #5a2e00;
+}
+
+.header__buttons img {
+  height: 20px;
+}
