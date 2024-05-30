@@ -8,8 +8,14 @@
 
 .board-row {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around; /* Ajusta según cómo quieras distribuir las tarjetas */
+    flex-direction: column;
+    justify-content: space-around;
     width: 80%;
     box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+    .board-row {
+        flex-direction: row;
+    }
 }

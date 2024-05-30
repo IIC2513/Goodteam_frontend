@@ -6,13 +6,13 @@ import cartIcon from '../../assets/cart.svg';
 import lupaIcon from '../../assets/search.svg';
 
 
-export const Navbar = ({ cartItems }) => {
+export const Navbar = ({ cartItems, toggleCart }) => {
     const [menuAbierto, setMenuAbierto] = useState(false)
 
     return(
         <nav>
             <Link to='/' className="logo-link">
-                <img src={logo} alt="La Kantina Logo" className="logo" />
+                <img src={logo} alt="Logo" className="logo" />
             </Link>
             <div className="search-container">
                 <img src={lupaIcon} alt="Buscar" className="search-icon" />
@@ -26,11 +26,11 @@ export const Navbar = ({ cartItems }) => {
                 <span></span>
             </div>
             <ul className={menuAbierto ? "abierto" : ""}>
-                <li className="cart">
-                    <Link to="/cart">
+                <li className="cart" onClick={toggleCart}>
+                    <div>
                         <img src={cartIcon} alt="Carrito" className="cart-icon" />
                         <span className="cart-count">{cartItems}</span>
-                    </Link>
+                    </div>
                 </li>
                 <li><NavLink to="/about_us">About us</NavLink></li>
                 <li><NavLink to='/instrucciones'>Instrucciones</NavLink></li>

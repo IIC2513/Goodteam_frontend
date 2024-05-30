@@ -1,10 +1,17 @@
 import React from 'react';
+import './Cart.css'
 
-function Cart() {
+const Cart = ({ isOpen, onClose }) => {
     return (
-        <div>
-            <h1>¡Tu carrito de compras!</h1>
-            <p>Tus productos se mostrarán aquí...</p>
+        <div className={`cart-widget ${isOpen ? 'open' : ''}`}>
+            <div className="cart-header">
+                <h2>Carrito de Compras</h2>
+                <button className="close-btn" onClick={onClose}>x</button>
+            </div>
+            <div className="cart-content">
+                {/* logica items */}
+                <p>Tus productos se mostrarán aquí...</p>
+            </div>
         </div>
     );
 }

@@ -83,6 +83,10 @@ nav ul li a {
     object-fit: contain;
 }
 
+.cart-icon:hover {
+    cursor: pointer;
+}
+
 .cart-count {
     font-size:12px;
     color: #fff;
