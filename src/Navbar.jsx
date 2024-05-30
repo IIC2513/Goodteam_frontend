@@ -1,17 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink} from "react-router-dom";
 import './Navbar.css';
+import logo from './assets/images/logo.jpg';
 
 
 export const Navbar = () => {
     return(
         <nav>
-            <Link to='/' className="title">
-                La Kantina
+            <Link to='/' className="logo-link">
+                <img src={logo} alt="La Kantina Logo" className="logo" />
             </Link>
             <ul>
-                <li><Link to="/about_us">About us</Link></li>
-                <li><Link>Instrucciones</Link></li>
+                <li><NavLink to="/about_us">About us</NavLink></li>
+                <li><NavLink to='/instrucciones'>Instrucciones</NavLink></li>
             </ul>
         </nav>
     );

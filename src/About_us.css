@@ -10,7 +10,7 @@ body, #root {
 
 .content {
     background-color: #f5f5f5;
-    min-height: 100vh; /* Asegura que cubra al menos toda la altura de la ventana */
+    min-height: 100vh;
     min-width: 100vw;
     display: flex;
     flex-direction: column;
