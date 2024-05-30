@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import reactLogo from './assets/logo.jpg'
+import logo from './assets/logo.jpg'
 import './Landing_page.css'
-import Header from './components/Header'
 
 function Landing_page() {
   return (
@@ -10,7 +9,7 @@ function Landing_page() {
         <div className="landing-card">
           <div className="landing-left">
             {/* Logo en la carpeta assets */}
-            <img src={reactLogo} className="landing-logo" alt="Logo"/>
+            <img src={logo} className="landing-logo" alt="Logo"/>
             <h2 className="slogan">El mejor lugar para tus bebidas favoritas</h2>
             <div className="landing-buttons">
               <button className="landing-button">Iniciar Sesión</button>
