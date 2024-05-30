@@ -3,6 +3,22 @@ import Slider from 'react-slick';
 import './ProductSlider.css';
 
 function ProductSlider({productItems}){
+    // Creamos contador de productos
+    const [counts, setCounts] = useState({});
+    const increment = (index) => {
+        setCounts((prevCounts) => ({
+            ...prevCounts,
+            [index]: (prevCounts[index] || 1) + 1,
+        }));
+    };
+    
+    const decrement = (index) => {
+        setCounts((prevCounts) => ({
+            ...prevCounts,
+            [index]: Math.max((prevCounts[index] || 1) - 1, 1),
+        }));
+    };
+
     // Creamos flechas para slider
     const PrevArrow = (props) => {
         const {onClick} = props;
@@ -80,13 +96,20 @@ function ProductSlider({productItems}){
                             <div className="product-details">
                                 <h3 className="truncate">{product.name}</h3>
                                 <div className="price">
-                                    <h4>{product.price}.00</h4>
-                                    <button
-                                        className="cart-add-btn"
-                                    >
-                                    Agregar al carro
+                                    <h4>${product.price}</h4>
+                                </div>
+                                <div className="counter">
+                                    <button className="min" onClick={() => decrement(index)}>
+                                        -
+                                    </button>
+                                    <label>{counts[index] || 1}</label>
+                                    <button className="mas" onClick={() => increment(index)}>
+                                        +
                                     </button>
                                 </div>
+                                <button className="cart-add-btn">
+                                Agregar al carro
+                                </button>
                             </div>
                         </div>
                     </div>
