@@ -4,6 +4,7 @@ import App from './App'
 import Board from './componentes/tableros/Board'
 import Layout from './componentes/header/Layout'
 import Instrucciones from './componentes/paginas/Instrucciones'
+import Cart from './componentes/header/Cart'
 
 function Routing(){
     return (
@@ -15,6 +16,7 @@ function Routing(){
                     <Route index element={<App/>}/>
                     <Route path={'board'} element={<Board/>}/>
                     <Route path={'/instrucciones'} element={<Instrucciones/>}/>
+                    <Route path={'/cart'} element={<Cart/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>
