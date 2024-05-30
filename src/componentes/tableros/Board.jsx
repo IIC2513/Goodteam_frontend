@@ -1,8 +1,8 @@
 import './Board.css'
 import Card from './Card_perfil'
-import Avatar from './assets/images/Avatar.jpg'
-import Roberto from './assets/images/Roberto.jpg'
-import Lecaros from './assets/images/Lecaros.jpg'
+import Avatar from '../../assets/images/Avatar.jpg'
+import Roberto from '../../assets/images/Roberto.jpg'
+import Lecaros from '../../assets/images/Lecaros.jpg'
 
 export default function Board(){
     return(

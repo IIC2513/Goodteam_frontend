@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import About_us from './About_us'
+import About_us from './componentes/paginas/About_us'
 import App from './App'
-import Board from './Board'
-import Layout from './Layout'
-import Instrucciones from './Instrucciones'
+import Board from './componentes/tableros/Board'
+import Layout from './componentes/header/Layout'
+import Instrucciones from './componentes/paginas/Instrucciones'
 
 function Routing(){
     return (
