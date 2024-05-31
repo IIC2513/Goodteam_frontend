@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+.prev,
+.next {
+  cursor: pointer;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 1.875rem;
+    border-radius: 8px;
+    box-shadow: #03004717 0 5px 10px;
+    margin: 0.625rem;
+    height: 28.125rem;
+}
+
+.truncate{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product h3 {
+    font-weight: 500;
+    font-size: 20px
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+}
+
+.product .price {
+    font-size: 18px;
+    display: flex;
+    margin-top: 1.25rem;
+}
+
+.cart-add-btn {
+    background: #5cc0f2;
+    color: white;
+    padding: 0.625rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    align-self: flex-end;
+    align-self: auto;
+}
+
+.cart-add-btn:hover {
+  color: white;
+  background-color: #0d6896;
+}
+
+.control-btn .next,.control-btn .prev {
+    position: absolute;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    top: 40%;
+    width: 3.125rem;
+    height: 3.125rem;
+    background: #5cc0f2;
+    border-radius: 50%;
+    transition: .5s;
+    z-index: 5;
+}
+
+.control-btn .prev {
+    left: -1.25rem
+}
+
+.control-btn .next {
+    right: -1.25rem
+}
+
+.control-btn .next i,.control-btn .prev i {
+    font-size: 25px;
+    transition: .5s;
+    color: #fff;
+
+}
+
+.control-btn .next:hover,.control-btn .prev:hover {
+    background: #0d6896;
+    color: #fff;
+    cursor: pointer
+}
+.img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.625rem;
+}
+.img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.counter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.625rem 0;
+}
+
+.counter .min,.counter .mas{
+    background: #292929;
+    color: white;
+    padding: 0.625rem;
+    cursor: pointer;
+}
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .product {
+        padding: 0.75rem;
+    }
+
+    .product h3 {
+        font-size: 18px;
+    }
+
+    .product .price {
+        font-size: 16px;
+    }
+
+    .cart-add-btn {
+        padding: 0.5rem;
+        font-size: 14px;
+    }
+
+    .control-btn .next, .control-btn .prev {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .control-btn .next i, .control-btn .prev i {
+        font-size: 18px;
+    }
+}
