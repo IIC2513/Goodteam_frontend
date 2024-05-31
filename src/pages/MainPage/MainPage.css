@@ -45,6 +45,10 @@ h1 {
   margin: 0 auto;
 }
 
+.slick-list {
+  max-width: 1280px;
+}
+
 /* Media queries para responsividad */
 @media (max-width: 768px) {
     h1 {
