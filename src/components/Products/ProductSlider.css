@@ -1,84 +1,115 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+/* ProductSlider.css */
 
-.prev,
-.next {
-  cursor: pointer;
+.box {
+    padding: 10px;
+    box-sizing: border-box;
+    height: 100%;
 }
 
 .product {
     display: flex;
     flex-direction: column;
-    background: #fff;
-    padding: 1.875rem;
-    border-radius: 8px;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
     box-shadow: #03004717 0 5px 10px;
-    margin: 0.625rem;
-    height: 28.125rem;
+    border-radius: 8px;
+    transition: transform 0.2s;
+    height: 100%;
 }
 
-.truncate{
+.product:hover {
+    transform: scale(1.05);
+}
+
+.img {
+    width: 100%;
+    height: 200px; /* Ajusta la altura según tus necesidades */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
-    text-overflow: ellipsis;
 }
 
-.product h3 {
-    font-weight: 500;
-    font-size: 20px
+.img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
 }
 
 .product-details {
     display: flex;
     flex-direction: column;
-    flex: 1;
-    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    flex-grow: 1; /* Asegura que el contenedor de detalles ocupe todo el espacio disponible */
+    justify-content: space-between; /* Distribuye uniformemente el espacio entre los elementos */
+    margin-top: 10px;
+    width: 100%; /* Asegura que los detalles ocupen todo el ancho disponible */
 }
 
-.product .price {
-    font-size: 18px;
+.product h3 {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 10px;
+    white-space: normal;
+    min-height: 60px; /* Añade una altura mínima para los títulos */
+    overflow: hidden; /* Oculta el desbordamiento */
+    text-overflow: ellipsis; /* Añade puntos suspensivos al final del texto desbordante */
+    display: -webkit-box; /* Soporte para WebKit */
+    -webkit-line-clamp: 3; /* Limita el número de líneas */
+    -webkit-box-orient: vertical; /* Define la orientación de la caja */
+}
+
+.price {
+    margin: 10px 0;
+}
+
+.counter {
     display: flex;
-    margin-top: 1.25rem;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.counter button {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+.counter label {
+    margin: 0 10px;
 }
 
 .cart-add-btn {
     background: #5cc0f2;
     color: white;
-    padding: 0.625rem;
+    border: none;
+    padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 16px;
-    align-self: flex-end;
-    align-self: auto;
+    outline: none;
 }
 
 .cart-add-btn:hover {
-  color: white;
-  background-color: #0d6896;
-}
+    color: white;
+    background-color: #0d6896;
+  }
 
-.control-btn .next,.control-btn .prev {
+.control-btn .next, .control-btn .prev {
     position: absolute;
     display: flex;
     justify-content: center; /* Centrar horizontalmente */
     align-items: center; /* Centrar verticalmente */
-    top: 40%;
-    width: 3.125rem;
-    height: 3.125rem;
+    top: 50%;
     background: #5cc0f2;
     border-radius: 50%;
-    transition: .5s;
-    z-index: 5;
-}
-
-.control-btn .prev {
-    left: -1.25rem
-}
-
-.control-btn .next {
-    right: -1.25rem
+    width: 50px;
+    height: 50px;
+    transform: translateY(-50%);
+    z-index: 1;
 }
 
 .control-btn .next i,.control-btn .prev i {
@@ -93,57 +124,23 @@
     color: #fff;
     cursor: pointer
 }
-.img {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 0.625rem;
-}
-.img img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+
+.control-btn .prev {
+    left: -25px; /* Ajusta esta distancia según sea necesario */
 }
 
-.counter {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0.625rem 0;
+.control-btn .next {
+    right: -25px; /* Ajusta esta distancia según sea necesario */
 }
 
-.counter .min,.counter .mas{
-    background: #292929;
-    color: white;
-    padding: 0.625rem;
-    cursor: pointer;
-}
-/* Media queries for responsive design */
 @media (max-width: 768px) {
-    .product {
-        padding: 0.75rem;
+    .img {
+        height: 150px; /* Ajusta la altura según tus necesidades */
     }
+}
 
-    .product h3 {
-        font-size: 18px;
-    }
-
-    .product .price {
-        font-size: 16px;
-    }
-
-    .cart-add-btn {
-        padding: 0.5rem;
-        font-size: 14px;
-    }
-
-    .control-btn .next, .control-btn .prev {
-        width: 2rem;
-        height: 2rem;
-    }
-
-    .control-btn .next i, .control-btn .prev i {
-        font-size: 18px;
+@media (max-width: 576px) {
+    .img {
+        height: 100px; /* Ajusta la altura según tus necesidades */
     }
 }

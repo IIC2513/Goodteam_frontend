@@ -10,9 +10,6 @@ function MainPage(){
     console.log(productItems);
   return (
         <>
-            <div>
-                <h1>Main Page</h1>
-            </div>
             <div className="ads">
                 <AdSlider />
             </div>
