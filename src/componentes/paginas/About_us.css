@@ -32,4 +32,10 @@ body, #root {
     text-align: left;
     padding-left: 50px;
     box-sizing: border-box;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.equipo h2 {
+    text-align: left;
 }

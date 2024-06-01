@@ -14,7 +14,7 @@ function Routing(productItems){
             <Routes>
                 <Route path={"/"} element={<Layout/>}>
                     <Route path={'/about_us'} element={<About_us/>}/>
-                    <Route index element={<App/>}/>
+                    <Route index element={<MainPage productItems={productItems} />}/>
                     <Route path={'board'} element={<Board/>}/>
                     <Route path={'/instrucciones'} element={<Instrucciones/>}/>
                     <Route path={'/cart'} element={<Cart/>}/>
