@@ -1,5 +1,5 @@
 import './About_us.css'
-import Board from '../tableros/Board.jsx'
+import Board from '../../components/tableros/Board.jsx'
 
 function About_us() {
     return (
