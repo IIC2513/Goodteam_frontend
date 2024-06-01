@@ -21,13 +21,13 @@ const AdSlider = () => {
         <>
             <Slider {...settings}>
                 <div className="ad-slide">
-                    <img src="src/assets/AdsImages/ad1.jpg" alt="ad1" />
+                    <img src="public/AdsImages/ad1.jpg" alt="ad1" />
                 </div>
                 <div className="ad-slide">
-                    <img src="src/assets/AdsImages/ad2.jpg" alt="ad2" />
+                    <img src="public/AdsImages/ad2.jpg" alt="ad2" />
                 </div>
                 <div className="ad-slide">
-                    <img src="src/assets/AdsImages/ad3.jpg" alt="ad3" />
+                    <img src="public/AdsImages/ad3.jpg" alt="ad3" />
                 </div>
             </Slider>
         </>
