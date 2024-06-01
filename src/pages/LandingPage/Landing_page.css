@@ -1,5 +1,4 @@
-/* Estilos globales */
-body.landing-page{
+body.landing-page {
   background-color: #F3DFB9; /* Fondo crema */
   margin: 0;
   padding: 0;
@@ -8,7 +7,6 @@ body.landing-page{
   align-items: center;
   min-height: 100vh;
 }
-
 
 .landing-container {
   display: flex;
@@ -67,8 +65,8 @@ body.landing-page{
 }
 
 .img-logo {
-  width: 300px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 300px; /* Asegura que las imágenes no superen este tamaño */
   padding: 10px;
   margin-bottom: -20px;
   transition: transform 0.4s ease; /* Transición suave */
@@ -80,8 +78,7 @@ body.landing-page{
   margin-bottom: -2%;
 }
 
-.subslogan
-{
+.subslogan {
   color: #292929; /* Texto negro suave */
   text-align: center;
 }
@@ -129,10 +126,13 @@ body.landing-page{
   display: flex; /* Mostrar elementos en una fila */
   padding-top: 10%;
   width: 90%;
+  justify-content: space-between;
 }
 
 .image-wrapper img {
-  width: 100%; /* Ajustar la imagen al 100% del contenedor */
+  width: 100%;
+  max-width: 45%; /* Ajustar las imágenes para que ocupen menos del 50% del contenedor */
+  height: auto;
 }
 
 /* Media query para dispositivos pequeños */
@@ -146,5 +146,15 @@ body.landing-page{
   .landing-right {
     padding-top: 0;
     padding-bottom: 20px;
+  }
+
+  .image-wrapper {
+    flex-direction: column; /* Cambiar a columna en dispositivos pequeños */
+    align-items: center;
+  }
+
+  .image-wrapper img {
+    max-width: 80%; /* Ajustar las imágenes para dispositivos pequeños */
+    margin-bottom: 10px; /* Añadir un margen inferior entre las imágenes */
   }
 }
