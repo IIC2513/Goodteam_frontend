@@ -67,14 +67,12 @@ function ProductSlider({productItems}){
             {
                 breakpoint: 768,
                 settings: {
-                    variableWidth: true,
                     slidesToShow: 2,
                 },
             },
             {
                 breakpoint: 576,
                 settings: {
-                    variableWidth: true,
                     slidesToShow: 1,
                 },
             },

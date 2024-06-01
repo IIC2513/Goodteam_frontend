@@ -37,16 +37,18 @@ h1 {
 }
 
 .ads {
-  margin: 0 auto;
-  width: 90%; /* Ajuste de ancho para centrado */
+    margin: 20px auto;
+    width: 90%; /* Ajuste de ancho para centrado */
 }
 
 .product-slider {
-  margin: 0 auto;
+    margin: 0 auto;
+    width: 90%; /* Ajuste de ancho para centrado */
+    max-width: 1280px; /* Máximo ancho para grandes pantallas */
 }
 
 .slick-list {
-  max-width: 1280px;
+    max-width: 1280px;
 }
 
 /* Media queries para responsividad */
@@ -62,6 +64,10 @@ h1 {
     .heading i {
         font-size: 1.25rem;
     }
+
+    .ads, .product-slider {
+        width: 95%; /* Ajuste de ancho para pantallas más pequeñas */
+    }
 }
 
 @media (max-width: 576px) {
@@ -75,5 +81,9 @@ h1 {
 
     .heading i {
         font-size: 1rem;
+    }
+
+    .ads, .product-slider {
+        width: 100%; /* Ajuste de ancho para pantallas pequeñas */
     }
 }
