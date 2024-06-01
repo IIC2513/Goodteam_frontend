@@ -1,5 +1,8 @@
 import React from "react";
 import Slider from "react-slick";
+import Ad1 from "../../assets/AdsImages/ad1.jpg";
+import Ad2 from "../../assets/AdsImages/ad2.jpg";
+import Ad3 from "../../assets/AdsImages/ad3.jpg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./AdSlider.css";
@@ -21,13 +24,13 @@ const AdSlider = () => {
         <>
             <Slider {...settings}>
                 <div className="ad-slide">
-                    <img src="public/AdsImages/ad1.jpg" alt="ad1" />
+                    <img src={Ad1} alt="ad1" />
                 </div>
                 <div className="ad-slide">
-                    <img src="public/AdsImages/ad2.jpg" alt="ad2" />
+                    <img src={Ad2} alt="ad2" />
                 </div>
                 <div className="ad-slide">
-                    <img src="public/AdsImages/ad3.jpg" alt="ad3" />
+                    <img src={Ad3} alt="ad3" />
                 </div>
             </Slider>
         </>
