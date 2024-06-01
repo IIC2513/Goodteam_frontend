@@ -1,10 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import About_us from './componentes/paginas/About_us'
-import App from './App'
-import Board from './componentes/tableros/Board'
-import Layout from './componentes/header/Layout'
-import Instrucciones from './componentes/paginas/Instrucciones'
-import Cart from './componentes/header/Cart'
+import About_us from './pages/AboutUs/About_us'
+import Board from './components/tableros/Board'
+import Layout from './components/header/Layout'
+import Instrucciones from './pages/Instructions/Instrucciones'
+import Cart from './components/header/Cart'
 import MainPage from "./pages/MainPage/MainPage";
 
 function Routing(productItems){
