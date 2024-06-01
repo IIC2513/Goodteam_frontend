@@ -5,6 +5,7 @@ import Layout from './components/header/Layout'
 import Instrucciones from './pages/Instructions/Instrucciones'
 import Cart from './components/header/Cart'
 import MainPage from "./pages/MainPage/MainPage";
+import Landing_page from './pages/LandingPage/Landing_page'
 
 function Routing(productItems){
     return (
@@ -19,6 +20,7 @@ function Routing(productItems){
                     <Route path={'/cart'} element={<Cart/>}/>
                     <Route path="/mainpage" element={<MainPage productItems={productItems} />}/>
                 </Route>
+                <Route path={'/landing_page'} element={<Landing_page/>}/>
             </Routes>
         </BrowserRouter>
         </>

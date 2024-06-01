@@ -1,0 +1,150 @@
+/* Estilos globales */
+body.landing-page{
+  background-color: #F3DFB9; /* Fondo crema */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+.landing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #F3DFB9;
+  padding: 20px; /* Añadir padding para evitar el desbordamiento */
+  box-sizing: border-box; /* Incluir padding y borde en el tamaño del elemento */
+}
+
+/* Estilos para la tarjeta de la landing page */
+.landing-card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1000px;
+  background-color: #FBF4E5;
+  border: 7px solid #CCB27B; /* Color primario (vino tinto) */
+  border-radius: 20px;
+  box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Para evitar que el contenido desborde */
+}
+
+/* Estilos para la columna izquierda */
+.landing-left {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para la columna derecha */
+.landing-right {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.landing-logo {
+  width: 300px;
+  max-width: 100%;
+  padding: 10px;
+  margin-bottom: -20px;
+  transition: transform 0.4s ease; /* Transición suave */
+}
+
+.landing-logo:hover {
+  transform: scale(1.07); /* Aumenta el tamaño del logo al 120% */
+}
+
+.img-logo {
+  width: 300px;
+  max-width: 100%;
+  padding: 10px;
+  margin-bottom: -20px;
+  transition: transform 0.4s ease; /* Transición suave */
+}
+
+.slogan {
+  color: #292929; /* Texto negro suave */
+  text-align: center;
+  margin-bottom: -2%;
+}
+
+.subslogan
+{
+  color: #292929; /* Texto negro suave */
+  text-align: center;
+}
+
+.landing-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.landing-buttons2 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 70%;
+}
+
+.landing-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #7B3F00; /* Color primario (vino tinto) */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.landing-button:hover {
+  background-color: #5a2e00;
+}
+
+.landing-main-button {
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: #DAA520; /* Color secundario (dorado) */
+}
+
+.landing-main-button:hover {
+  background-color: #b58e18;
+}
+
+.image-wrapper {
+  display: flex; /* Mostrar elementos en una fila */
+  padding-top: 10%;
+  width: 90%;
+}
+
+.image-wrapper img {
+  width: 100%; /* Ajustar la imagen al 100% del contenedor */
+}
+
+/* Media query para dispositivos pequeños */
+@media (max-width: 768px) {
+  .landing-card {
+    flex-direction: column;
+    width: 100%; /* Ajustar el ancho para dispositivos más pequeños */
+    height: auto; /* Ajustar la altura automáticamente */
+  }
+
+  .landing-right {
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+}
