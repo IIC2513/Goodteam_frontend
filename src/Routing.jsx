@@ -19,8 +19,8 @@ function Routing(productItems){
                     <Route path={'/instrucciones'} element={<Instrucciones/>}/>
                     <Route path={'/cart'} element={<Cart/>}/>
                     <Route path="/mainpage" element={<MainPage productItems={productItems} />}/>
-                    <Route path={'/landing_page'} element={<Landing_page/>}/>
                 </Route>
+                <Route path={'/landing_page'} element={<Landing_page/>}/>
             </Routes>
         </BrowserRouter>
         </>
