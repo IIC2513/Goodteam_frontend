@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import logo from './assets/logo.jpg';
+import imagen from './assets/pngegg.png';
+import imagen2 from './assets/pngegg2.png';
 import './Landing_page.css';
 
 function Landing_page() {
@@ -9,6 +11,9 @@ function Landing_page() {
         <div className="landing-left">
           <img src={logo} className="landing-logo" alt="Logo" />
           <h2 className="slogan">El mejor lugar para tus bebidas favoritas</h2>
+          <p className="subslogan">Explora nuestra amplia selección de productos seleccionados, 
+          desde los clásicos favoritos hasta las últimas novedades, todo disponible
+          para una entrega rápida y conveniente en la puerta de tu hogar. </p>
           <div className="landing-buttons">
             <button className="landing-button">Iniciar Sesión</button>
             <button className="landing-button">Registrarse</button>
@@ -16,7 +21,11 @@ function Landing_page() {
           </div>
         </div>
         <div className="landing-right">
-          <Quiz />
+            <Quiz/>
+          <div className="image-wrapper">
+            <img src={imagen} className="img-logo" alt="Logo" />
+            <img src={imagen2} className="img-logo" alt="Logo" />
+          </div>
         </div>
       </div>
     </div>
