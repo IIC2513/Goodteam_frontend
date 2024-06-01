@@ -34,7 +34,7 @@ export const Navbar = ({ cartItems, toggleCart }) => {
                 </li>
                 <li><NavLink to="/mainpage">Productos</NavLink></li>
                 <li><NavLink to="/about_us">About us</NavLink></li>
-                <li><NavLink to='/instrucciones'>Instrucciones</NavLink></li>
+                <li><NavLink to='/DocsPage'>Instrucciones</NavLink></li>
             </ul>
         </nav>
     );
