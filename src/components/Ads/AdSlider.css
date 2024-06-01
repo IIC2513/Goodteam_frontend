@@ -1,0 +1,28 @@
+/* Asegúrate de que todas las imágenes del slider sean del mismo tamaño y estén centradas */
+.ad-slide {
+    display: flex;
+    height: 350px;
+    max-width: 500px;
+    width: 100%;
+    background-color: #f5f5f5; /* Color de fondo para mostrar la diferencia entre imágenes */
+}
+
+.ad-slide img {
+    max-height: 100%;
+    object-fit: contain; /* Asegúrate de que la imagen se ajuste dentro del contenedor sin deformarse */
+}
+
+@media (max-width: 768px) {
+    .ad-slide {
+        height: 250px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .ad-slide {
+        height: 250px;
+        max-width: 550px;
+        align-items: center;
+    }
+}

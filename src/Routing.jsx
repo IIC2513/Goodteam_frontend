@@ -5,8 +5,9 @@ import Board from './componentes/tableros/Board'
 import Layout from './componentes/header/Layout'
 import Instrucciones from './componentes/paginas/Instrucciones'
 import Cart from './componentes/header/Cart'
+import MainPage from "./pages/MainPage/MainPage";
 
-function Routing(){
+function Routing(productItems){
     return (
         <>
         <BrowserRouter>
@@ -17,6 +18,7 @@ function Routing(){
                     <Route path={'board'} element={<Board/>}/>
                     <Route path={'/instrucciones'} element={<Instrucciones/>}/>
                     <Route path={'/cart'} element={<Cart/>}/>
+                    <Route path="/mainpage" element={<MainPage productItems={productItems} />}/>
                 </Route>
             </Routes>
         </BrowserRouter>
