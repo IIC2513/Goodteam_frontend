@@ -11,7 +11,7 @@ export const Navbar = ({ cartItems, toggleCart }) => {
 
     return(
         <nav>
-            <Link to='/' className="logo-link">
+            <Link to='/mainpage' className="logo-link">
                 <img src={logo} alt="Logo" className="logo" />
             </Link>
             <div className="search-container">
@@ -32,6 +32,7 @@ export const Navbar = ({ cartItems, toggleCart }) => {
                         <span className="cart-count">{cartItems}</span>
                     </div>
                 </li>
+                <li><NavLink to="/mainpage">Productos</NavLink></li>
                 <li><NavLink to="/about_us">About us</NavLink></li>
                 <li><NavLink to='/instrucciones'>Instrucciones</NavLink></li>
             </ul>
