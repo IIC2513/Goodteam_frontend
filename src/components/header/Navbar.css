@@ -1,0 +1,151 @@
+.active {
+    background-color: #f5f5f5;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f3dfb9;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 70px;
+    margin-right: 20px;
+    margin-left: 10px;
+    padding: 0;
+}
+
+.search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.search-icon {
+    margin-right: 5px;
+    fill: red;
+}
+
+nav .title {
+    font-size: 1.5rem;
+    margin: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #292929;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #292929;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.cart {
+    position: relative;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.cart-icon {
+    height: 24px;
+    width: 24px;
+    object-fit: contain;
+}
+
+.cart-icon:hover {
+    cursor: pointer;
+}
+
+.cart-count {
+    font-size:12px;
+    color: #fff;
+    background: red;
+    border-radius:50%;
+    padding: 0 8px;
+    position:relative;
+    left:-6px;
+    top:-1px;   
+}
+
+nav .menu {
+    display: none;
+    position: absolute;
+    top: 1.2rem;
+    right: 0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.25rem;
+    height: 2rem;
+}
+
+nav .menu span {
+    height: 0.4rem;
+    width: 100%;
+    background-color: #292929;
+    border-radius: 0.2rem;
+}
+
+@media (max-width: 610px) {
+    nav .menu {
+        display: flex;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    nav ul {
+       display: none;
+       flex-direction: column;
+       width: 100%;
+       margin-bottom: 0.25rem;
+    }
+
+    nav ul.abierto {
+        display:flex;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+    nav ul li a {
+        margin: 0.2rem 0.5rem;
+    }
+
+    .search-container {
+        margin-top: 1rem;
+    }
+}

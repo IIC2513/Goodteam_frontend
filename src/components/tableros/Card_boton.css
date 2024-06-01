@@ -1,0 +1,30 @@
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #5cc0f2; /* Color base del botón */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el cursor */
+}
+
+.button:active {
+    transform: scale(0.95); /* Efecto de reducción al presionar */
+}
+
+.button.show-info {
+    background-color: #5cc0f2; /* Color diferente cuando showImage es true */
+}

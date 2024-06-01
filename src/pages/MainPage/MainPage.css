@@ -1,0 +1,89 @@
+/* MainPage.css */
+
+/* Estilos básicos para la página principal */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+h1 {
+    margin: 1.25rem 0;
+    font-size: 2.5rem;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5rem 0 1.25rem;
+}
+
+.heading i {
+    margin-right: 0.625rem;
+    font-size: 1.5rem;
+    color: #5cc0f2;
+}
+
+.heading h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.ads {
+    margin: 20px auto;
+    width: 90%; /* Ajuste de ancho para centrado */
+}
+
+.product-slider {
+    margin: 0 auto;
+    width: 90%; /* Ajuste de ancho para centrado */
+    max-width: 1280px; /* Máximo ancho para grandes pantallas */
+}
+
+.slick-list {
+    max-width: 1280px;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .heading h2 {
+        font-size: 1.5rem;
+    }
+
+    .heading i {
+        font-size: 1.25rem;
+    }
+
+    .ads, .product-slider {
+        width: 95%; /* Ajuste de ancho para pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .heading h2 {
+        font-size: 1.25rem;
+    }
+
+    .heading i {
+        font-size: 1rem;
+    }
+
+    .ads, .product-slider {
+        width: 100%; /* Ajuste de ancho para pantallas pequeñas */
+    }
+}
