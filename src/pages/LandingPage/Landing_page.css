@@ -14,7 +14,7 @@ body.landing-page {
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: #F3DFB9;
+  /* background-color: #F3DFB9; */
   padding: 20px; /* Añadir padding para evitar el desbordamiento */
   box-sizing: border-box; /* Incluir padding y borde en el tamaño del elemento */
 }
@@ -115,11 +115,13 @@ body.landing-page {
 .landing-main-button {
   border-radius: 10px;
   font-weight: bold;
+  color: white;
   background-color: #DAA520; /* Color secundario (dorado) */
 }
 
 .landing-main-button:hover {
   background-color: #b58e18;
+  border-color: #b58e18;
 }
 
 .image-wrapper {

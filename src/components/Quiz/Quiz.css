@@ -7,18 +7,18 @@
     padding: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   }
-  
+
   .quiz-header {
     font-size: 24px;
     font-weight: bold;
     color: #7B3F00;
   }
-  
+
   .quiz-question {
     margin-bottom: 20px;
     color: #7B3F00;
   }
-  
+
   .quiz-options button {
     padding: 10px 20px;
     margin: 5px;
@@ -29,7 +29,7 @@
     border-radius: 5px;
     cursor: pointer
   }
-  
+
   .quiz-options button:hover {
     background-color: #5a2e00;
   }
@@ -37,7 +37,7 @@
   .quiz-result h3 {
     color: #7B3F00;
   }
-  
+
   .quiz-main-button {
     padding: 10px 20px;
     font-size: 16px;
@@ -49,8 +49,7 @@
     cursor: pointer;
     margin-top: 20px;
   }
-  
+
   .quiz-main-button:hover {
     background-color: #b58e18;
   }
-  

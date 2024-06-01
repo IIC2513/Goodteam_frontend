@@ -11,7 +11,7 @@ export const Navbar = ({ cartItems, toggleCart }) => {
 
     return(
         <nav>
-            <Link to='/mainpage' className="logo-link">
+            <Link to='/' className="logo-link">
                 <img src={logo} alt="Logo" className="logo" />
             </Link>
             <div className="search-container">
