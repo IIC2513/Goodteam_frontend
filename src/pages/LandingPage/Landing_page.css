@@ -130,63 +130,6 @@ body {
   background-color: #b58e18;
 }
 
-/* Estilos para el quiz */
-.quiz-container {
-  width: 80%;
-  text-align: center;
-  background-color: #fff3e6; /* Fondo claro específico para el quiz */
-  border: 3px solid #CCB27B; /* Borde a juego con la tarjeta principal */
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-.quiz-header {
-  font-size: 24px;
-  font-weight: bold;
-  color: #7B3F00;
-}
-
-.quiz-question {
-  margin-bottom: 20px;
-  color: #7B3F00;
-}
-
-.quiz-options button {
-  padding: 10px 20px;
-  margin: 5px;
-  font-size: 16px;
-  color: white;
-  background-color: #7B3F00;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.quiz-options button:hover {
-  background-color: #5a2e00;
-}
-
-.quiz-result h3 {
-  color: #7B3F00;
-}
-
-.quiz-main-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  background-color: #DAA520;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-.quiz-main-button:hover {
-  background-color: #b58e18;
-}
-
 .image-wrapper {
   display: flex; /* Mostrar elementos en una fila */
   padding-top: 10%;
