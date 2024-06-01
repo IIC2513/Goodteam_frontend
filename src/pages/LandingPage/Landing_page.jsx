@@ -6,29 +6,29 @@ import './Landing_page.css';
 import Quiz from '../../components/Quiz/Quiz.jsx';
 
 function Landing_page() {
-  useEffect(() => {
-    // Guardar los estilos originales del body
-    const originalStyles = {
-      backgroundColor: document.body.style.backgroundColor,
-      justifyContent: document.body.style.justifyContent,
-      alignItems: document.body.style.alignItems,
-      display: document.body.style.display,
-    };
+  // useEffect(() => {
+  //   // Guardar los estilos originales del body
+  //   const originalStyles = {
+  //     backgroundColor: document.body.style.backgroundColor,
+  //     justifyContent: document.body.style.justifyContent,
+  //     alignItems: document.body.style.alignItems,
+  //     display: document.body.style.display,
+  //   };
 
-    // Aplicar los nuevos estilos
-    document.body.style.backgroundColor = '#F3DFB9';
-    document.body.style.display = 'flex';
-    document.body.style.justifyContent = 'center';
-    document.body.style.alignItems = 'center';
+  //   // Aplicar los nuevos estilos
+  //   document.body.style.backgroundColor = '#F3DFB9';
+  //   document.body.style.display = 'flex';
+  //   document.body.style.justifyContent = 'center';
+  //   document.body.style.alignItems = 'center';
 
-    // Revertir los estilos cuando el componente se desmonte
-    return () => {
-      document.body.style.backgroundColor = originalStyles.backgroundColor;
-      document.body.style.display = originalStyles.display;
-      document.body.style.justifyContent = originalStyles.justifyContent;
-      document.body.style.alignItems = originalStyles.alignItems;
-    };
-  }, []);
+  //   // Revertir los estilos cuando el componente se desmonte
+  //   return () => {
+  //     document.body.style.backgroundColor = originalStyles.backgroundColor;
+  //     document.body.style.display = originalStyles.display;
+  //     document.body.style.justifyContent = originalStyles.justifyContent;
+  //     document.body.style.alignItems = originalStyles.alignItems;
+  //   };
+  // }, []);
 
   return (
     <div className="landing-page">
@@ -43,7 +43,7 @@ function Landing_page() {
             <div className="landing-buttons">
               <button className="landing-button">Iniciar Sesión</button>
               <button className="landing-button">Registrarse</button>
-              <button className="landing-main-button">Página Principal</button>
+              <button className="landing-main-button" onClick={() => window.location.href = '/Mainpage'}>Ver Productos</button>
             </div>
           </div>
           <div className="landing-right">

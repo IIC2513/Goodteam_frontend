@@ -32,7 +32,7 @@ export default function Quiz(){
     const renderResult = () => (
       <div className="quiz-result">
         <h3>Tu licor ideal es: {calculateResult()}</h3>
-        <button className="quiz-main-button" onClick={() => window.location.href = '/'}>Ver Productos</button>
+        <button className="quiz-main-button" onClick={() => window.location.href = '/Mainpage'}>Ver Productos</button>
       </div>
     );
   

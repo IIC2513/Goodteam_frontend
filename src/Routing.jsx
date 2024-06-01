@@ -13,14 +13,15 @@ function Routing(productItems){
         <BrowserRouter>
             <Routes>
                 <Route path={"/"} element={<Layout/>}>
+                    <Route path={'/landing_page'} element={<Landing_page/>}/>
+                    <Route index element={<Landing_page />}/>
                     <Route path={'/about_us'} element={<About_us/>}/>
-                    <Route index element={<MainPage productItems={productItems} />}/>
                     <Route path={'board'} element={<Board/>}/>
                     <Route path={'/instrucciones'} element={<Instrucciones/>}/>
                     <Route path={'/cart'} element={<Cart/>}/>
                     <Route path="/mainpage" element={<MainPage productItems={productItems} />}/>
                 </Route>
-                <Route path={'/landing_page'} element={<Landing_page/>}/>
+                <Route index element={<Landing_page />}/>
             </Routes>
         </BrowserRouter>
         </>
