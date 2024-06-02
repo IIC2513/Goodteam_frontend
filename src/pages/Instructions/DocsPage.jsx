@@ -1,6 +1,10 @@
 // src/pages/DocsPage.jsx
 import React, { useState, useEffect } from 'react';
-import landingGif from '../../assets/gifs/gif1.gif';
+import landingGif from '../../assets/gifs/Landing_page_gif.gif';
+import aboutGif from '../../assets/gifs/AboutUs_page_gif.gif';
+import mainGif from '../../assets/gifs/Main_page_gif.gif';
+import navbarGif from '../../assets/gifs/Navbar_gif.gif';
+
 import './DocsPage.css';
 
 const DocsPage = () => {
@@ -55,7 +59,7 @@ const DocsPage = () => {
             <p>
               La página de "About Us" contiene información general sobre La Kantina, junto con los miembros del equipo que trabajaron en el desarrollo de la aplicación. Si te interesa saber más sobre un miembro en específico, puedes acceder a una pequeña descripción haciendo clic a un boton en su tarjeta.
             </p>
-            {/* <img src={aboutGif} alt="About Us Page GIF" className="gif"/> */}
+            <img src={aboutGif} alt="About Us Page GIF" className="gif"/>
           </div>
         )}
       </div>
@@ -69,7 +73,7 @@ const DocsPage = () => {
             <p>
               En la página principal se muestran todos los productos disponibles en la aplicación a modo de carrusel, puedes desplazar hacia la izquierda o derecha para ver más productos. Si te interesa comprar un producto en específico, puedes seleccionar las cantidades que desees.
             </p>
-            {/* <img src={mainGif} alt="Main Page GIF" className="gif"/> */}
+            <img src={mainGif} alt="Main Page GIF" className="gif"/>
           </div>
         )}
       </div>
@@ -83,7 +87,7 @@ const DocsPage = () => {
             <p>
               La barra de navegación tiene todos los elementos necesarios para navegar por la aplicación. Puedes acceder a la página de inicio seleccionando el logo de La Kantina, o a otras páginas como "About Us" o "Products" haciendo clic en los botones correspondientes.
             </p>
-            {/* <img src={navbarGif} alt="Navbar GIF" className="gif"/> */}
+            <img src={navbarGif} alt="Navbar GIF" className="gif"/>
           </div>
         )}
       </div>
