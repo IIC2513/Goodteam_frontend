@@ -1,42 +1,74 @@
 /* src/pages/DocsPage.css */
 .docs-container {
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
-    background-color: #FBF4E5;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  background-color: #FBF4E5;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #7B3F00;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section-header {
+  cursor: pointer;
+  color: #7B3F00;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.section-header:hover {
+  color: #DAA520;
+  transform: translateX(5px);
+}
+
+.section-content {
+  padding: 10px;
+  background-color: #FFF;
+  border-left: 5px solid #CCB27B;
+  border-radius: 5px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+  opacity: 0;
+}
+
+
+.section-content.fade-in {
+  max-height: 1000px; /* Ajustar según la altura del contenido */
+  opacity: 1;
+}
+
+.section-content p:hover{
+  color: #7B3F00;
+}
+
+.section-content p {
+  margin-bottom: 10px;
+}
+
+
+.gif {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease-in-out;
+  opacity: 0;
+  animation: fadeIn 0.5s 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
-  
-  h1 {
-    text-align: center;
-    color: #7B3F00;
-  }
-  
-  .section {
-    margin-bottom: 20px;
-  }
-  
-  .section h2 {
-    cursor: pointer;
-    color: #7B3F00;
-  }
-  
-  .section-content {
-    padding: 10px;
-    background-color: #FFF;
-    border-left: 5px solid #CCB27B;
-    border-radius: 5px;
-  }
-  
-  .section-content p {
-    margin-bottom: 10px;
-  }
-  
-  .gif {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-  
+}

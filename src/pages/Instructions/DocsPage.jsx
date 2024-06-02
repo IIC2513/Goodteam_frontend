@@ -37,13 +37,13 @@ const DocsPage = () => {
       <h1>Guía de Uso de la Aplicación</h1>
       
       <div className="section">
-        <h2 onClick={() => toggleSection('landing')}>
-          {activeSection === 'landing' ? '▲' : '▼'} Página de inicio 
+        <h2 onClick={() => toggleSection('landing')} className="section-header">
+          Página de Inicio {activeSection === 'landing' ? '▲' : '▼'}
         </h2>
         {activeSection === 'landing' && (
-          <div className="section-content">
+          <div className="section-content fade-in">
             <p>
-              La página de inicio es la primera página que verás al ingresar a la aplicación. Acá puedes acceder a páginas para iniciar sesión, registrarse (aun no implementado) o ir directamente a la página de los productos. Además, ofrece un pequeño quiz para identificar qué tipo de tragos podrían gustarte según tus preferencias personales.
+              La página de inicio ofrece una introducción a nuestra aplicación, mostrando una vista previa de nuestras bebidas favoritas. Puedes iniciar sesión, registrarte o explorar la página principal desde aquí.
             </p>
             <img src={landingGif} alt="Landing Page GIF" className="gif"/>
           </div>
@@ -51,13 +51,13 @@ const DocsPage = () => {
       </div>
 
       <div className="section">
-        <h2 onClick={() => toggleSection('about')}>
-          {activeSection === 'about' ? '▲' : '▼'} About Us
+        <h2 onClick={() => toggleSection('about')} className="section-header">
+          Página Sobre Nosotros {activeSection === 'about' ? '▲' : '▼'}
         </h2>
         {activeSection === 'about' && (
-          <div className="section-content">
+          <div className="section-content fade-in">
             <p>
-              La página de "About Us" contiene información general sobre La Kantina, junto con los miembros del equipo que trabajaron en el desarrollo de la aplicación. Si te interesa saber más sobre un miembro en específico, puedes acceder a una pequeña descripción haciendo clic a un boton en su tarjeta.
+              La página 'Sobre Nosotros' proporciona información sobre nuestro equipo y nuestra misión. Es una buena forma de conocer a las personas detrás de la aplicación.
             </p>
             <img src={aboutGif} alt="About Us Page GIF" className="gif"/>
           </div>
@@ -65,13 +65,13 @@ const DocsPage = () => {
       </div>
 
       <div className="section">
-        <h2 onClick={() => toggleSection('main')}>
-          {activeSection === 'main' ? '▲' : '▼'} Página Principal
+        <h2 onClick={() => toggleSection('main')} className="section-header">
+          Página Principal {activeSection === 'main' ? '▲' : '▼'}
         </h2>
         {activeSection === 'main' && (
-          <div className="section-content">
+          <div className="section-content fade-in">
             <p>
-              En la página principal se muestran todos los productos disponibles en la aplicación a modo de carrusel, puedes desplazar hacia la izquierda o derecha para ver más productos. Si te interesa comprar un producto en específico, puedes seleccionar las cantidades que desees.
+              La página principal muestra todos los productos disponibles en un carrusel interactivo. Puedes navegar por nuestra selección de bebidas y encontrar información detallada sobre cada producto.
             </p>
             <img src={mainGif} alt="Main Page GIF" className="gif"/>
           </div>
@@ -79,13 +79,13 @@ const DocsPage = () => {
       </div>
 
       <div className="section">
-        <h2 onClick={() => toggleSection('navbar')}>
-          {activeSection === 'navbar' ? '▲' : '▼'} Barra de Navegación
+        <h2 onClick={() => toggleSection('navbar')} className="section-header">
+          Navegación {activeSection === 'navbar' ? '▲' : '▼'}
         </h2>
         {activeSection === 'navbar' && (
-          <div className="section-content">
+          <div className="section-content fade-in">
             <p>
-              La barra de navegación tiene todos los elementos necesarios para navegar por la aplicación. Puedes acceder a la página de inicio seleccionando el logo de La Kantina, o a otras páginas como "About Us" o "Products" haciendo clic en los botones correspondientes.
+              La barra de navegación se encuentra en la parte superior de todas las páginas, permitiéndote moverte fácilmente entre la página de inicio, sobre nosotros, y la página principal.
             </p>
             <img src={navbarGif} alt="Navbar GIF" className="gif"/>
           </div>
