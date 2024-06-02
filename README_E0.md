@@ -1,6 +1,11 @@
-# E0 :construction:
+# E1 :construction:
 
 * :pencil2: **Nombre Grupo:** Goodteam
+
+#### Página de netlify:
+```
+https://mellow-queijadas-2264ae.netlify.app
+```
 
 
 ## Descripción general :thought_balloon:
@@ -72,8 +77,8 @@ Como administrador, quiero eliminar productos que ya no están disponibles o que
 
 <!-- Documento de diseño web -->
 ### :art: Documento de diseño
-![Paleta de colores](assets/Design/PrincipalColors.png)
-![Paleta de colores](assets/Design/SecondaryColors.png)
+![Paleta de colores](assets/Design/PrincipalColors.jpg)
+![Paleta de colores](assets/Design/SecondaryColors.jpg)
 ![Paleta de colores](assets/Design/Neutral_Alert.png)
 ![Paleta de colores](assets/Design/Typography.png)
 
