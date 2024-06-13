@@ -6,6 +6,7 @@ import DocsPage from './pages/Instructions/DocsPage'
 import Cart from './components/header/Cart'
 import MainPage from "./pages/MainPage/MainPage";
 import Landing_page from './pages/LandingPage/Landing_page'
+import Profile from './pages/UserProfile/User_profile'
 
 function Routing(productItems){
     return (
@@ -20,6 +21,7 @@ function Routing(productItems){
                     <Route path={'/DocsPage'} element={<DocsPage/>}/>
                     <Route path={'/cart'} element={<Cart/>}/>
                     <Route path="/mainpage" element={<MainPage productItems={productItems} />}/>
+                    <Route path={'/user_profile'} element={<Profile/>}/>
                 </Route>
                 <Route index element={<Landing_page />}/>
             </Routes>
