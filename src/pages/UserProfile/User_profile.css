@@ -1,0 +1,34 @@
+.user-content {
+    padding: 20px;
+}
+
+.user-info p {
+    font-size: 1.2em;
+}
+
+.user-info button {
+    margin-top: 20px;
+}
+
+.user-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-form div {
+    margin-bottom: 10px;
+}
+
+.user-form label {
+    margin-right: 10px;
+}
+
+.user-form input[type="text"],
+.user-form input[type="email"] {
+    padding: 5px;
+    font-size: 1em;
+}
+
+.user-form button {
+    margin-top: 20px;
+}
