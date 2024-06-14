@@ -2,6 +2,11 @@
 
 * :pencil2: **Nombre Grupo:** Goodteam
 
+#### Página de netlify:
+```
+https://mellow-queijadas-2264ae.netlify.app
+```
+
 
 ## Descripción general :thought_balloon:
 
