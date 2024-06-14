@@ -56,7 +56,7 @@
     overflow: hidden; /* Oculta el desbordamiento */
     text-overflow: ellipsis; /* Añade puntos suspensivos al final del texto desbordante */
     display: -webkit-box; /* Soporte para WebKit */
-    -webkit-line-clamp: 3; /* Limita el número de líneas */
+    -webkit-line-clamp: 2; /* Limita el número de líneas */
     -webkit-box-orient: vertical; /* Define la orientación de la caja */
 }
 

@@ -88,12 +88,12 @@ function ProductSlider({productItems}){
                     <div className="box" key={index}>
                         <div className="product">
                             <div className="img">
-                                <img src={product.img} alt="" />
+                                <img src={product.imagen} alt="" />
                             </div>
                             <div className="product-details">
-                                <h3 className="truncate">{product.name}</h3>
+                                <h3 className="truncate">{product.nombre}</h3>
                                 <div className="price">
-                                    <h4>${product.price}</h4>
+                                    <h4>${product.precio}</h4>
                                 </div>
                                 <div className="counter">
                                     <button className="min" onClick={() => decrement(index)}>

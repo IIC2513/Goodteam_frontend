@@ -4,9 +4,21 @@ import AdSlider from "../../components/Ads/AdSlider";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './MainPage.css';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function MainPage(){
-    const { productItems } = ProductsData;
+    const [productItems, setProductItems] = useState([]);
+    useEffect(() => {
+        axios.get(`${import.meta.env.VITE_BACKEND_URL}/productos`)
+            .then(response => {
+                const data = response.data;
+                setProductItems(data);
+            })
+            .catch(error => {
+                console.error("There was an error fetching the product data!", error);
+        });
+    }, []);
     console.log(productItems);
   return (
         <>
