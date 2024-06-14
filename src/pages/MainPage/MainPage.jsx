@@ -1,4 +1,3 @@
-import ProductsData from "../../components/Products/ProductsData";
 import ProductSlider from "../../components/Products/ProductSlider";
 import AdSlider from "../../components/Ads/AdSlider";
 import 'slick-carousel/slick/slick.css';
