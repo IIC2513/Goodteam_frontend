@@ -3,7 +3,12 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function Profile() {
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState({
+        nombre: 'Nombre Predeterminado',
+        email: 'email@predeterminado.com',
+        direccion: 'Dirección Predeterminada',
+        isAdmin: false,
+    });
     const [isEditing, setIsEditing] = useState(false);
     const [formData, setFormData] = useState({
         nombre: '',

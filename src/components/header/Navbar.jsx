@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink} from "react-router-dom";
 import './Navbar.css';
 import logo from '../../assets/images/logo.png';
 import cartIcon from '../../assets/cart.svg';
 import lupaIcon from '../../assets/search.svg';
+import { CartContext } from "./CartContext";
 
 
-export const Navbar = ({ cartItems, toggleCart }) => {
-    const [menuAbierto, setMenuAbierto] = useState(false)
+export const Navbar = ({ toggleCart }) => {
+    const [menuAbierto, setMenuAbierto] = useState(false);
+    const { cartItems } = useContext(CartContext);
 
     return(
         <nav>
@@ -29,7 +31,7 @@ export const Navbar = ({ cartItems, toggleCart }) => {
                 <li className="cart" onClick={toggleCart}>
                     <div>
                         <img src={cartIcon} alt="Carrito" className="cart-icon" />
-                        <span className="cart-count">{cartItems}</span>
+                        <span className="cart-count">{cartItems.length}</span>
                     </div>
                 </li>
                 <li><NavLink to="/mainpage">Productos</NavLink></li>
