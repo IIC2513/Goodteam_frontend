@@ -107,14 +107,19 @@ function ProductSlider({ productItems }) {
     };
 
     return (
-        <>
-            <Slider {...settings}>
-                {productItems.map((product, index) => {
-                    return (
-                        <div className="box" key={index}>
-                            <div className="product">
-                                <div className="img">
-                                    <img src={product.img} alt="" />
+    <>
+        <Slider {...settings}>
+            {productItems.map((product, index) => {
+                return (
+                    <div className="box" key={index}>
+                        <div className="product">
+                            <div className="img">
+                                <img src={product.imagen} alt="" />
+                            </div>
+                            <div className="product-details">
+                                <h3 className="truncate">{product.nombre}</h3>
+                                <div className="price">
+                                    <h4>${product.precio}</h4>
                                 </div>
                                 <div className="product-details">
                                     <h3 className="truncate">{product.name}</h3>

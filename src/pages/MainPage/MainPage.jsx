@@ -1,16 +1,26 @@
-import React from 'react';
-import ProductsData from "../../components/Products/ProductsData";
 import ProductSlider from "../../components/Products/ProductSlider";
 import AdSlider from "../../components/Ads/AdSlider";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './MainPage.css';
 import { CartProvider } from '../../components/header/CartContext';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
-function MainPage() {
-    const { productItems } = ProductsData;
-
-    return (
+function MainPage(){
+    const [productItems, setProductItems] = useState([]);
+    useEffect(() => {
+        axios.get(`${import.meta.env.VITE_BACKEND_URL}/productos`)
+            .then(response => {
+                const data = response.data;
+                setProductItems(data);
+            })
+            .catch(error => {
+                console.error("There was an error fetching the product data!", error);
+        });
+    }, []);
+    console.log(productItems);
+  return (
         <CartProvider> {/* Envuelve tu aplicación con el proveedor del contexto del carrito */}
             <div className="ads">
                 <AdSlider />
