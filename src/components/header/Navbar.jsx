@@ -5,10 +5,12 @@ import logo from '../../assets/images/logo.png';
 import cartIcon from '../../assets/cart.svg';
 import lupaIcon from '../../assets/search.svg';
 import LogoutButton from "../Auth/Logout";
+import { AuthContext } from "../Auth/AuthContext";
 
 
 export const Navbar = ({ cartItems, toggleCart }) => {
     const [menuAbierto, setMenuAbierto] = useState(false)
+    const { user_id } = React.useContext(AuthContext);
 
     return(
         <nav>
@@ -16,6 +18,7 @@ export const Navbar = ({ cartItems, toggleCart }) => {
                 <img src={logo} alt="Logo" className="logo" />
             </Link>
 
+            <div className="user-id">ID: {user_id}</div>
             <LogoutButton />
 
             <div className="search-container">

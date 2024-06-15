@@ -5,6 +5,7 @@ import { AuthContext } from './AuthContext';
 
 function LoginPage() {
     const {token, setToken} = useContext(AuthContext);
+    const {user_id, setUserId} = useContext(AuthContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
@@ -35,7 +36,9 @@ function LoginPage() {
             const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/login`, { email, password });
             // Guardar el token de autenticación en localStorage o cookies
             const access_token = response.data.access_token;
+            const access_user_id = response.data.id;
             setToken(access_token);
+            setUserId(access_user_id);
             // Redirigir al usuario a la página principal o a la página deseada
             window.location.href = '/MainPage';
         } catch (err) {
