@@ -25,7 +25,7 @@ function Routing(productItems){
                     <Route path={'/DocsPage'} element={<DocsPage/>}/>
                     <Route path={'/cart'} element={<Cart/>}/>
                     <Route path="/mainpage" element={<MainPage productItems={productItems} />}/>
-                    <Route path={'/user_profile'} element={<Profile/>}/>
+                    <Route path={'/profile'} element={<Profile/>}/>
                     <Route path={'/login'} element={<Login/>}/>
                     <Route path={'/protected'} element={<UserCheck/>}/>
                     <Route path={'/admin'} element={<AdminCheck/>}/>
