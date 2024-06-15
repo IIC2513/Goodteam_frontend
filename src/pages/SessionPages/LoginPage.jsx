@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import './LoginPage.css';
-import { AuthContext } from './AuthContext';
+import { AuthContext } from '../../components/Auth/AuthContext';
 
 function LoginPage() {
     const {token, setToken} = useContext(AuthContext);
@@ -71,7 +71,7 @@ function LoginPage() {
                         required
                     />
                 </div>
-                <button type="submit">Login</button>
+                <button className="loginbutton" type="submit">Login</button>
             </form>
         </div>
     );

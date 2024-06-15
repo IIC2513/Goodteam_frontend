@@ -7,7 +7,7 @@ import Cart from './components/header/Cart'
 import MainPage from "./pages/MainPage/MainPage";
 import Landing_page from './pages/LandingPage/Landing_page'
 import Profile from './pages/UserProfile/User_profile'
-import Login from './components/Auth/LoginPage'
+import Login from './pages/SessionPages/LoginPage'
 import UserCheck from './pages/Protected/UserCheck'
 import AdminCheck from './pages/Protected/AdminCheck'
 import FormPage from './pages/ProductFormPage/ProductFormPage'

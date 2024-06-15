@@ -38,6 +38,7 @@ function MainPage(){
             <div className="product-slider">
                 <ProductSlider productItems={productItems} />
             </div>
+            <div className="emptyspace"></div>
         </>
     );
 }

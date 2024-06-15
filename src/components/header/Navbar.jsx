@@ -10,16 +10,29 @@ import { AuthContext } from "../Auth/AuthContext";
 
 export const Navbar = ({ cartItems, toggleCart }) => {
     const [menuAbierto, setMenuAbierto] = useState(false)
-    const { user_id } = React.useContext(AuthContext);
+    const { token, user_id } = React.useContext(AuthContext);
 
     return(
         <nav>
-            <Link to='/' className="logo-link">
-                <img src={logo} alt="Logo" className="logo" />
-            </Link>
-
-            <div className="user-id">ID: {user_id}</div>
-            <LogoutButton />
+            <div className="left-container">
+                <Link to='/' className="logo-link">
+                    <img src={logo} alt="Logo" className="logo" />
+                </Link>
+                <div className="auth-buttons">
+                    {token !== "null" ? (
+                        <> 
+                            <NavLink to="/profile" className="profile-link">Perfil</NavLink>
+                            <LogoutButton />
+                        </>
+                    ) : (
+                        <>
+                            <NavLink to="/login" className="login-link">Iniciar sesión</NavLink>
+                            <NavLink to="/register" className="register-link">Registrarse</NavLink>
+                        </>
+                    )}
+                </div>
+            </div>
+            
 
             <div className="search-container">
                 <img src={lupaIcon} alt="Buscar" className="search-icon" />
