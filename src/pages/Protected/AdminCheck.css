@@ -62,7 +62,7 @@ tr:nth-child(even) {
     color: #fff;
 }
 
-button, .edit-link {
+.edit-link {
     padding: 8px 12px;
     width: 90px;
     margin: 5px;
@@ -83,6 +83,17 @@ button:hover, .edit-link:hover {
     color: white;
 }
 
+.delete-link {
+    padding: 8px 12px;
+    width: 90px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Agregado para eliminar el subrayado del enlace */
+}
+
 button:hover, .delete-link:hover {
     background-color: red;
     color: #fff;
@@ -93,7 +104,7 @@ button:hover, .delete-link:hover {
     color: white;
 }
 
-button, .create-link {
+.create-link {
     padding: 8px 12px;
     width: 90px;
     margin: 5px;
