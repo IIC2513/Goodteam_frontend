@@ -44,7 +44,7 @@ function ProductForm({ product }) {
             }
           )
         : await axios.post(
-            `${import.meta.env.VITE_BACKEND_URL}/productos/${product.id}`,
+            `${import.meta.env.VITE_BACKEND_URL}/productos`,
             requestData,
             {
               headers: {
@@ -100,12 +100,14 @@ function ProductForm({ product }) {
         />
 
         <label htmlFor="stock">Stock:</label>
-        <textarea
+        <input
+          type="text"
           id="stock"
           name="stock"
           value={stock}
+          placeholder="Cantidad de productos en stock (*)"
           onChange={(event) => setStock(event.target.value)}
-        ></textarea>
+        />
 
         <label htmlFor="precio">Precio:</label>
         <input

@@ -92,6 +92,7 @@ function AdminCheck() {
             <h1>Productos</h1>
             {isAdmin ? (
                 <div>
+                <Link to = {`/product-form`} className="create-link">Crear Producto</Link>
                     <table>
                         <thead>
                             <tr>
@@ -115,22 +116,13 @@ function AdminCheck() {
                                     <td>{product.categoriaId}</td>
                                     <td>
                                         <Link to={`/product-form/${product.id}`} className="edit-link">Editar</Link>
-                                        <button onClick={() => handleDeleteProduct(product.id)}>Borrar</button>
+                                        <button onClick={() => handleDeleteProduct(product.id)} className="delete-link">Borrar</button>
                                     </td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
                     <h1>{msg}</h1>
-                    <div className="create-product-container">
-                        <h2>Crear nuevo producto</h2>
-                        <input type="text" name="nombre" value={newProduct.nombre} onChange={handleInputChange} placeholder="Nombre" />
-                        <input type="number" name="stock" value={newProduct.stock} onChange={handleInputChange} placeholder="Stock" />
-                        <input type="number" step="0.01" name="precio" value={newProduct.precio} onChange={handleInputChange} placeholder="Precio" />
-                        <input type="text" name="imagen" value={newProduct.imagen} onChange={handleInputChange} placeholder="URL de la imagen" />
-                        <input type="number" name="categoriaId" value={newProduct.categoriaId} onChange={handleInputChange} placeholder="ID de la categoría" />
-                        <button onClick={handleCreateProduct}>Crear Producto</button>
-                    </div>
                 </div>
             ) : (
                 <p>No tienes permisos para ver esta sección.</p>

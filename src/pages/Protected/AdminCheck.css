@@ -31,26 +31,12 @@ th, td {
 }
 
 th {
-    background-color: #2980b9;
+    background-color: #5cc0f2;
     color: #fff;
 }
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
-}
-
-button {
-    padding: 8px 12px;
-    margin: 5px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #3498db;
-    color: #fff;
 }
 
 .create-product-container {
@@ -78,21 +64,52 @@ button:hover {
 
 button, .edit-link {
     padding: 8px 12px;
+    width: 90px;
     margin: 5px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-decoration: none; /* Agregado para eliminar el subrayado del enlace */
-    display: inline-block; /* Asegura que el enlace se comporte como un botón */
 }
 
 button:hover, .edit-link:hover {
-    background-color: #3498db;
+    background-color: #0d6896;
     color: #fff;
 }
 
 .edit-link {
-    background-color: #e67e22;
+    background-color: #5cc0f2;
+    color: white;
+}
+
+button:hover, .delete-link:hover {
+    background-color: red;
+    color: #fff;
+}
+
+.delete-link {
+    background-color: #cd4422;
+    color: white;
+}
+
+button, .create-link {
+    padding: 8px 12px;
+    width: 90px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Agregado para eliminar el subrayado del enlace */
+}
+
+button:hover, .create-link:hover {
+    background-color: #0d6896;
+    color: #fff;
+}
+
+.create-link {
+    background-color: #5cc0f2;
     color: white;
 }

@@ -9,8 +9,6 @@ function FormPage() {
   const [producto, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  console.log("id", id);
-
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -20,7 +18,7 @@ function FormPage() {
           setProduct(response.data);
         } else {
           // Si no hay un ID en los parámetros, se está creando un nuevo producto
-          setProduct({ nombre: "", stock: "", precio: "", imagen: "", categoriaId: ""});
+          setProduct({nombre: "", stock: "", precio: "", imagen: "", categoriaId: ""});
         }
       } catch (error) {
         console.error("Error fetching product:", error);
