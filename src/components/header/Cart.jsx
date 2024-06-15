@@ -1,10 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import './Cart.css';
 import { CartContext } from './CartContext';
 
 const Cart = ({ isOpen, onClose }) => {
     const { cartItems, removeFromCart, totalAmount, clearCart } = useContext(CartContext);
-
+    
+    useEffect(() => {
+        console.log('Carrito actualizado:', cartItems);
+    }, [cartItems]);
+    
     return (
         <div className={`cart-widget ${isOpen ? 'open' : ''}`}>
             <div className="cart-header">

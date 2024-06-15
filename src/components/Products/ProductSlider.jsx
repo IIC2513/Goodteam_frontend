@@ -26,8 +26,8 @@ function ProductSlider({ productItems }) {
         try {
             console.log('Sending request to add product to cart', product, quantity);
             // Aquí realizaríamos la solicitud POST al backend para agregar el producto al carrito
-            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/carritos/agregar`, {
-                usuarioId: 130, // Debes obtener el usuario actual o su ID de alguna manera
+            const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/carritos/agregar`, {
+                usuarioId: 137, // Debes obtener el usuario actual o su ID de alguna manera
                 productoId: product.id,
                 cantidad: quantity,
             });
@@ -121,11 +121,6 @@ function ProductSlider({ productItems }) {
                                 <div className="price">
                                     <h4>${product.precio}</h4>
                                 </div>
-                                <div className="product-details">
-                                    <h3 className="truncate">{product.name}</h3>
-                                    <div className="price">
-                                        <h4>${product.price}</h4>
-                                    </div>
                                     <div className="counter">
                                         <button className="min" onClick={() => decrement(index)}>
                                             -
