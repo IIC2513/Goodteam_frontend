@@ -4,16 +4,36 @@ import './Navbar.css';
 import logo from '../../assets/images/logo.png';
 import cartIcon from '../../assets/cart.svg';
 import lupaIcon from '../../assets/search.svg';
+import LogoutButton from "../Auth/Logout";
+import { AuthContext } from "../Auth/AuthContext";
 
 
 export const Navbar = ({ cartItems, toggleCart }) => {
     const [menuAbierto, setMenuAbierto] = useState(false)
+    const { token, user_id } = React.useContext(AuthContext);
 
     return(
         <nav>
-            <Link to='/' className="logo-link">
-                <img src={logo} alt="Logo" className="logo" />
-            </Link>
+            <div className="left-container">
+                <Link to='/' className="logo-link">
+                    <img src={logo} alt="Logo" className="logo" />
+                </Link>
+                <div className="auth-buttons">
+                    {token !== "null" ? (
+                        <> 
+                            <NavLink to="/profile" className="profile-link">Perfil</NavLink>
+                            <LogoutButton />
+                        </>
+                    ) : (
+                        <>
+                            <NavLink to="/login" className="login-link">Iniciar sesión</NavLink>
+                            <NavLink to="/register" className="register-link">Registrarse</NavLink>
+                        </>
+                    )}
+                </div>
+            </div>
+            
+
             <div className="search-container">
                 <img src={lupaIcon} alt="Buscar" className="search-icon" />
                 <input type="text" placeholder="Buscar productos..." className="search-input" />

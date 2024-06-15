@@ -14,6 +14,11 @@ nav {
     box-sizing: border-box;
 }
 
+.left-container {
+    display: flex;
+    align-items: center;
+}
+
 input {
     font-family: Montserrat;
 }
@@ -28,6 +33,20 @@ input {
     margin-right: 20px;
     margin-left: 10px;
     padding: 0;
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.logoutbutton {
+    text-decoration: none;
+    color: #292929;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
 }
 
 .search-container {
@@ -106,7 +125,7 @@ nav .menu {
     display: none;
     position: absolute;
     top: 1.2rem;
-    right: 0.5rem;
+    right: 3rem;
     flex-direction: column;
     justify-content: space-between;
     width: 2.25rem;
@@ -118,38 +137,48 @@ nav .menu span {
     width: 100%;
     background-color: #292929;
     border-radius: 0.2rem;
+    margin-right: 300px;
 }
 
-@media (max-width: 610px) {
+@media (max-width: 768px) {
     nav .menu {
         display: flex;
     }
 
     nav {
         flex-direction: column;
-        align-items: start;
+        align-items: flex-start;
     }
 
     nav ul {
-       display: none;
-       flex-direction: column;
-       width: 100%;
-       margin-bottom: 0.25rem;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 0.25rem;
+        align-items: flex-start;
     }
 
     nav ul.abierto {
-        display:flex;
+        display: flex;
+        margin-right: 10rem;
     }
 
     nav ul li {
         width: 100%;
         text-align: center;
     }
-    nav ul li a {
+
+    nav ul li a, nav ul li .logoutbutton {
         margin: 0.2rem 0.5rem;
     }
 
     .search-container {
         margin-top: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-input {
+        max-width: 90%;
     }
 }
