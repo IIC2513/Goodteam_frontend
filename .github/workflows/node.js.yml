@@ -7,6 +7,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     steps:
       - name: Repository Checkout
         uses: actions/checkout@v4
