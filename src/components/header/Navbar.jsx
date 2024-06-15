@@ -4,6 +4,7 @@ import './Navbar.css';
 import logo from '../../assets/images/logo.png';
 import cartIcon from '../../assets/cart.svg';
 import lupaIcon from '../../assets/search.svg';
+import LogoutButton from "../Auth/Logout";
 
 
 export const Navbar = ({ cartItems, toggleCart }) => {
@@ -14,6 +15,9 @@ export const Navbar = ({ cartItems, toggleCart }) => {
             <Link to='/' className="logo-link">
                 <img src={logo} alt="Logo" className="logo" />
             </Link>
+
+            <LogoutButton />
+
             <div className="search-container">
                 <img src={lupaIcon} alt="Buscar" className="search-icon" />
                 <input type="text" placeholder="Buscar productos..." className="search-input" />

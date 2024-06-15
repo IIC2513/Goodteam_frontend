@@ -77,8 +77,8 @@ Como administrador, quiero eliminar productos que ya no están disponibles o que
 
 <!-- Documento de diseño web -->
 ### :art: Documento de diseño
-![Paleta de colores](assets/Design/PrincipalColors.png)
-![Paleta de colores](assets/Design/SecondaryColors.png)
+![Paleta de colores](assets/Design/PrincipalColors.jpg)
+![Paleta de colores](assets/Design/SecondaryColors.jpg)
 ![Paleta de colores](assets/Design/Neutral_Alert.png)
 ![Paleta de colores](assets/Design/Typography.png)
 

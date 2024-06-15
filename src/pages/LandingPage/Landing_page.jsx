@@ -41,7 +41,7 @@ function Landing_page() {
             desde los clásicos favoritos hasta las últimas novedades, todo disponible
             para una entrega rápida y conveniente en la puerta de tu hogar.</p>
             <div className="landing-buttons">
-              <button className="landing-button">Iniciar Sesión</button>
+              <button className="landing-button" onClick={() => window.location.href = '/Login'}>Iniciar Sesión</button>
               <button className="landing-button">Registrarse</button>
               <button className="landing-main-button" onClick={() => window.location.href = '/Mainpage'}>Ver Productos</button>
             </div>

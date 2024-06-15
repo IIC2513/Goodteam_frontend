@@ -7,6 +7,9 @@ import Cart from './components/header/Cart'
 import MainPage from "./pages/MainPage/MainPage";
 import Landing_page from './pages/LandingPage/Landing_page'
 import Profile from './pages/UserProfile/User_profile'
+import Login from './components/Auth/LoginPage'
+import UserCheck from './pages/Protected/UserCheck'
+import AdminCheck from './pages/Protected/AdminCheck'
 
 function Routing(productItems){
     return (
@@ -22,6 +25,9 @@ function Routing(productItems){
                     <Route path={'/cart'} element={<Cart/>}/>
                     <Route path="/mainpage" element={<MainPage productItems={productItems} />}/>
                     <Route path={'/user_profile'} element={<Profile/>}/>
+                    <Route path={'/login'} element={<Login/>}/>
+                    <Route path={'/protected'} element={<UserCheck/>}/>
+                    <Route path={'/admin'} element={<AdminCheck/>}/>
                 </Route>
                 <Route index element={<Landing_page />}/>
             </Routes>
