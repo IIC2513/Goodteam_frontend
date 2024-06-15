@@ -121,6 +121,14 @@ nav ul li a {
     top:-1px;   
 }
 
+.admin-link {
+    margin-left: 10px;
+}
+
+.login-link {
+    margin-right: 10px;
+}
+
 nav .menu {
     display: none;
     position: absolute;

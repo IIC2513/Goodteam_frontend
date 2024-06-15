@@ -21,16 +21,17 @@ export const Navbar = ({ cartItems, toggleCart }) => {
                 <div className="auth-buttons">
                     {token !== "null" ? (
                         <> 
-                            <NavLink to="/profile" className="profile-link">Perfil</NavLink>
                             <LogoutButton />
+                            <NavLink to="/profile" className="profile-link">Perfil</NavLink>
                         </>
                     ) : (
                         <>
                             <NavLink to="/login" className="login-link">Iniciar sesión</NavLink>
-                            <NavLink to="/register" className="register-link">Registrarse</NavLink>
+                            <NavLink to="/login" className="register-link">Registrarse</NavLink>
                         </>
                     )}
                 </div>
+                <NavLink to="/admin" className="admin-link">Admin</NavLink>
             </div>
             
 

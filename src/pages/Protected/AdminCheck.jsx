@@ -122,7 +122,7 @@ function AdminCheck() {
                             ))}
                         </tbody>
                     </table>
-                    <h1>{msg}</h1>
+                    {/* <h1>{msg}</h1> */}
                 </div>
             ) : (
                 <p>No tienes permisos para ver esta sección.</p>
