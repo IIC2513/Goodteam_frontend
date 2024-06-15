@@ -6,7 +6,9 @@
 ```
 https://mellow-queijadas-2264ae.netlify.app
 ```
-
+#### Para hacer login como usuario administrador:
+email: admin@admin.com
+password: admin123
 
 ## Descripción general :thought_balloon:
 
