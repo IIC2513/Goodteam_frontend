@@ -10,6 +10,7 @@ import Profile from './pages/UserProfile/User_profile'
 import Login from './components/Auth/LoginPage'
 import UserCheck from './pages/Protected/UserCheck'
 import AdminCheck from './pages/Protected/AdminCheck'
+import FormPage from './pages/ProductFormPage/ProductFormPage'
 
 function Routing(productItems){
     return (
@@ -28,6 +29,8 @@ function Routing(productItems){
                     <Route path={'/login'} element={<Login/>}/>
                     <Route path={'/protected'} element={<UserCheck/>}/>
                     <Route path={'/admin'} element={<AdminCheck/>}/>
+                    <Route path={"/product-form"} element={<FormPage/>}/>
+                    <Route path={'/product-form/:id'} element={<FormPage/>}/>
                 </Route>
                 <Route index element={<Landing_page />}/>
             </Routes>
