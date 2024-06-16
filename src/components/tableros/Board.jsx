@@ -1,4 +1,5 @@
 import './Board.css'
+import React from 'react'
 import Card from './Card_perfil'
 import Roberto from '../../assets/images/Roberto.jpg'
 import Lecaros from '../../assets/images/Lecaros.jpg'

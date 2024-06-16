@@ -4,8 +4,8 @@ import './LoginPage.css';
 import { AuthContext } from '../../components/Auth/AuthContext';
 
 function LoginPage() {
-    const {token, setToken} = useContext(AuthContext);
-    const {user_id, setUserId} = useContext(AuthContext);
+    const {setToken} = useContext(AuthContext);
+    const {setUserId} = useContext(AuthContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
@@ -27,8 +27,8 @@ function LoginPage() {
             setToken(access_token);
             setUserId(access_user_id);
             window.location.href = '/MainPage';
-        } catch (err) {
-            console.log(response)
+        } catch (error) {
+            console.error(error.message);
             setError(isSignUp ? 'Registration failed' : 'Invalid email or password');
         }
     };

@@ -1,5 +1,5 @@
 import './Card_perfil.css'
-import { useState } from 'react';
+import React, { useState } from 'react';
 import CardButton from './Card_boton'
 
 export default function Card({ imageUrl, altText, description}){
