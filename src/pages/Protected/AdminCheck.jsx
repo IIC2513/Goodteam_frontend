@@ -6,7 +6,7 @@ import './AdminCheck.css';
 
 function AdminCheck() {
     const { token } = useContext(AuthContext);
-    const [setMsg] = useState('');
+    // const [msg, setMsg] = useState('');
     const [isAdmin, setIsAdmin] = useState(false);
     const [productItems, setProductItems] = useState([]);
     // const [newProduct, setNewProduct] = useState({ nombre: '', stock: 0, precio: 0.0, imagen: '', categoriaId: 0 });
@@ -20,13 +20,14 @@ function AdminCheck() {
     };
 
     useEffect(() => {
-        axios(config).then(() => {
+        axios(config).then((response) => {
             console.log("Enviaste un token bueno y estas logueado y eres admin!!!");
-            setMsg("Enviaste un token bueno y estas logueado y eres admin!!!");
+            console.log(response);
+            // setMsg("Enviaste un token bueno y estas logueado y eres admin!!!");
             setIsAdmin(true);
         }).catch((error) => {
             console.log("Hubo un error, no estas logueado o tu token expiró.");
-            setMsg("Hubo un error, no estas logueado o tu token expiró o no eres admin.");
+            // setMsg("Hubo un error, no estas logueado o tu token expiró o no eres admin.");
             console.log(error);
             setIsAdmin(false);
         });
@@ -92,7 +93,7 @@ function AdminCheck() {
             <h1>Productos</h1>
             {isAdmin ? (
                 <div>
-                <Link to = {`/product-form`} className="create-link">Crear Producto</Link>
+                    <Link to = {`/product-form`} className="create-link">Crear Producto</Link>
                     <table>
                         <thead>
                             <tr>
