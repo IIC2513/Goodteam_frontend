@@ -1,4 +1,5 @@
 import './About_us.css'
+import React from 'react'
 import Board from '../../components/tableros/Board.jsx'
 
 function About_us() {

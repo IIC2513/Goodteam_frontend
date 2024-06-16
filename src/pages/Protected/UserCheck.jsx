@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { AuthContext } from "../../components/Auth/AuthContext";
 
@@ -15,7 +15,7 @@ function UserCheck(){
     };
 
     useEffect(() => {
-        axios(config).then((response) => {
+        axios(config).then(() => {
             console.log("Enviaste un token bueno y estas logueado !!!");
             setMsg("Enviaste un token bueno y estas logueado !!!")
         }).catch((error) => {

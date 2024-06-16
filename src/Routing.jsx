@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import About_us from './pages/AboutUs/About_us'
 import Board from './components/tableros/Board'

@@ -10,7 +10,7 @@ import { AuthContext } from "../Auth/AuthContext";
 
 export const Navbar = ({ cartItems, toggleCart }) => {
     const [menuAbierto, setMenuAbierto] = useState(false)
-    const { token, user_id } = React.useContext(AuthContext);
+    const { token } = React.useContext(AuthContext);
 
     return(
         <nav>

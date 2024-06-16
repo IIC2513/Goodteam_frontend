@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../components/Auth/AuthContext";
@@ -6,10 +6,10 @@ import './AdminCheck.css';
 
 function AdminCheck() {
     const { token } = useContext(AuthContext);
-    const [msg, setMsg] = useState('');
+    const [setMsg] = useState('');
     const [isAdmin, setIsAdmin] = useState(false);
     const [productItems, setProductItems] = useState([]);
-    const [newProduct, setNewProduct] = useState({ nombre: '', stock: 0, precio: 0.0, imagen: '', categoriaId: 0 });
+    // const [newProduct, setNewProduct] = useState({ nombre: '', stock: 0, precio: 0.0, imagen: '', categoriaId: 0 });
 
     const config = {
         method: 'get',
@@ -20,7 +20,7 @@ function AdminCheck() {
     };
 
     useEffect(() => {
-        axios(config).then((response) => {
+        axios(config).then(() => {
             console.log("Enviaste un token bueno y estas logueado y eres admin!!!");
             setMsg("Enviaste un token bueno y estas logueado y eres admin!!!");
             setIsAdmin(true);
@@ -45,23 +45,23 @@ function AdminCheck() {
         }
     }, [isAdmin]);
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setNewProduct(prevState => ({ ...prevState, [name]: value }));
-    };
+    // const handleInputChange = (e) => {
+    //     const { name, value } = e.target;
+    //     setNewProduct(prevState => ({ ...prevState, [name]: value }));
+    // };
 
-    const handleCreateProduct = () => {
-        axios.post(`${import.meta.env.VITE_BACKEND_URL}/productos`, newProduct, {
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        }).then(response => {
-            setProductItems([...productItems, response.data]);
-            setNewProduct({ nombre: '', stock: 0, precio: 0.0, imagen: '', categoriaId: 0 });
-        }).catch(error => {
-            console.error("There was an error creating the product!", error);
-        });
-    };
+    // const handleCreateProduct = () => {
+    //     axios.post(`${import.meta.env.VITE_BACKEND_URL}/productos`, newProduct, {
+    //         headers: {
+    //             'Authorization': `Bearer ${token}`
+    //         }
+    //     }).then(response => {
+    //         setProductItems([...productItems, response.data]);
+    //         setNewProduct({ nombre: '', stock: 0, precio: 0.0, imagen: '', categoriaId: 0 });
+    //     }).catch(error => {
+    //         console.error("There was an error creating the product!", error);
+    //     });
+    // };
 
     const handleDeleteProduct = (id) => {
         axios.delete(`${import.meta.env.VITE_BACKEND_URL}/productos/${id}`, {
@@ -75,17 +75,17 @@ function AdminCheck() {
         });
     };
 
-    const handleUpdateProduct = (id, updatedProduct) => {
-        axios.put(`${import.meta.env.VITE_BACKEND_URL}/productos/${id}`, updatedProduct, {
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        }).then(response => {
-            setProductItems(productItems.map(product => (product.id === id ? response.data : product)));
-        }).catch(error => {
-            console.error("There was an error updating the product!", error);
-        });
-    };
+    // const handleUpdateProduct = (id, updatedProduct) => {
+    //     axios.put(`${import.meta.env.VITE_BACKEND_URL}/productos/${id}`, updatedProduct, {
+    //         headers: {
+    //             'Authorization': `Bearer ${token}`
+    //         }
+    //     }).then(response => {
+    //         setProductItems(productItems.map(product => (product.id === id ? response.data : product)));
+    //     }).catch(error => {
+    //         console.error("There was an error updating the product!", error);
+    //     });
+    // };
 
     return (
         <div>
