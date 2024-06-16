@@ -64,7 +64,7 @@ function ProductForm({ product }) {
         }, 2000);
       }
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error:", error.message);
       setModalMessage("Ocurrió un error al procesar la solicitud.");
       setModalOpen(true);
     }
@@ -120,7 +120,7 @@ function ProductForm({ product }) {
           onChange={(event) => setPrecio(event.target.value)}
         />
 
-        <label htmlFor="categoria">Categoría:</label>
+        <label htmlFor="categoria">Categoría (del 1 al 6):</label>
         <input
           type="text"
           id="categoria"
