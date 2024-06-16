@@ -1,4 +1,4 @@
-# E0 :construction:
+# E1 :construction:
 
 * :pencil2: **Nombre Grupo:** Goodteam
 
@@ -6,9 +6,16 @@
 ```
 https://mellow-queijadas-2264ae.netlify.app
 ```
-#### Para hacer login como usuario administrador:
+## Importante
+
+En las seeds de nuestro programa se creó un solo usuario administrador. Para acceder a el necesitas:
+
+```
 email: admin@admin.com
 password: admin123
+```
+
+Esto te servirá para probar la página ```/admin``` a partir de la raiz de nuestra app, donde solo se mostrará la información si eres administrador.
 
 ## Descripción general :thought_balloon:
 
