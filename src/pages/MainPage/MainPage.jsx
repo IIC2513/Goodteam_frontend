@@ -3,6 +3,7 @@ import AdSlider from "../../components/Ads/AdSlider";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './MainPage.css';
+import { CartProvider } from '../../components/header/CartContext';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -20,7 +21,7 @@ function MainPage(){
     }, []);
     console.log(productItems);
   return (
-        <>
+        <CartProvider> {/* Envuelve tu aplicación con el proveedor del contexto del carrito */}
             <div className="ads">
                 <AdSlider />
             </div>
@@ -39,7 +40,8 @@ function MainPage(){
                 <ProductSlider productItems={productItems} />
             </div>
             <div className="emptyspace"></div>
-        </>
+        </CartProvider>
     );
 }
+
 export default MainPage;
