@@ -1,13 +1,15 @@
 import React, { useContext, useEffect } from 'react';
 import './Cart.css';
 import { CartContext } from './CartContext';
+import CartItemCard from './CartItemCard';
 
 const Cart = ({ isOpen, onClose }) => {
-    const { cartItems, removeFromCart, totalAmount, clearCart } = useContext(CartContext);
+    const { cartItems, totalAmount, clearCart, removeFromCart } = useContext(CartContext);
     
     useEffect(() => {
-        console.log('Carrito actualizado:', cartItems);
-    }, [cartItems]);
+        // Llama a una función para obtener la lista de productos del backend
+        // y luego actualiza cartItems usando updateCartItems
+    }, []);
     
     return (
         <div className={`cart-widget ${isOpen ? 'open' : ''}`}>
@@ -18,14 +20,9 @@ const Cart = ({ isOpen, onClose }) => {
             <div className="cart-content">
                 {cartItems.length > 0 ? (
                     <>
-                        <ul>
-                            {cartItems.map(item => (
-                                <li key={item.id}>
-                                    <span>{item.name} x {item.quantity} - ${item.price * item.quantity}</span>
-                                    <button onClick={() => removeFromCart(item.id)}>Remove</button>
-                                </li>
-                            ))}
-                        </ul>
+                        {cartItems.map(item => (
+                            <CartItemCard key={item.id} item={item} removeFromCart={removeFromCart} />
+                        ))}
                         <p>Total: ${totalAmount}</p>
                         <button className="checkout-btn" onClick={() => { clearCart(); alert('Compra realizada!'); }}>Comprar</button>
                     </>

@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import './ProductSlider.css';
 import { CartContext } from '../header/CartContext';
 import axios from 'axios';
+import { AuthContext } from '../Auth/AuthContext';
 
 function ProductSlider({ productItems }) {
     const { addToCart } = useContext(CartContext);
@@ -22,12 +23,13 @@ function ProductSlider({ productItems }) {
         }));
     };
 
+    const { user_id }= React.useContext(AuthContext)
     const handleAddToCart = async (product, quantity) => {
         try {
             console.log('Sending request to add product to cart', product, quantity);
             // Aquí realizaríamos la solicitud POST al backend para agregar el producto al carrito
             const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/carritos/agregar`, {
-                usuarioId: 137, // Debes obtener el usuario actual o su ID de alguna manera
+                usuarioId: user_id, // Debes obtener el usuario actual o su ID de alguna manera
                 productoId: product.id,
                 cantidad: quantity,
             });
@@ -41,7 +43,6 @@ function ProductSlider({ productItems }) {
             // También podemos reiniciar el contador de cantidad a 1 para ese producto
             setCounts((prevCounts) => ({ ...prevCounts, [product.id]: 1 }));
 
-            alert('Producto agregado al carrito correctamente.');
         } catch (error) {
             console.error('Error al agregar producto al carrito:', error);
             alert('Hubo un error al intentar agregar el producto al carrito.');

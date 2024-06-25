@@ -8,7 +8,7 @@ import LogoutButton from "../Auth/Logout";
 import { AuthContext } from "../Auth/AuthContext";
 import { CartContext } from "./CartContext";
 
-export const Navbar = ({ cartItems, toggleCart }) => {
+export const Navbar = ({ cartItems: propCartItems, toggleCart }) => {
     const [menuAbierto, setMenuAbierto] = useState(false)
     const { token } = React.useContext(AuthContext);
     const { cartItems } = useContext(CartContext);
