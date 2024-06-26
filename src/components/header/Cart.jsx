@@ -4,12 +4,13 @@ import { CartContext } from './CartContext';
 import CartItemCard from './CartItemCard';
 
 const Cart = ({ isOpen, onClose }) => {
-    const { cartItems, totalAmount, clearCart, removeFromCart } = useContext(CartContext);
+    const { cartItems, totalAmount, clearCart, removeFromCart, fetchCartItems, user_id } = useContext(CartContext);
     
     useEffect(() => {
-        // Llama a una función para obtener la lista de productos del backend
-        // y luego actualiza cartItems usando updateCartItems
-    }, []);
+        if (user_id) {
+            fetchCartItems(user_id);
+        }
+    }, [fetchCartItems, user_id]);
     
     return (
         <div className={`cart-widget ${isOpen ? 'open' : ''}`}>
