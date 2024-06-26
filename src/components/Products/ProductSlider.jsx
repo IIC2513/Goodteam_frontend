@@ -32,6 +32,9 @@ function ProductSlider({ productItems }) {
                 usuarioId: user_id, // Debes obtener el usuario actual o su ID de alguna manera
                 productoId: product.id,
                 cantidad: quantity,
+                nombre: product.nombre,
+                precio: product.precio,
+                imagen: product.imagen,
             });
             
             // Asumiendo que el backend devuelve algún tipo de confirmación o información adicional

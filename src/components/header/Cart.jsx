@@ -4,7 +4,7 @@ import { CartContext } from './CartContext';
 import CartItemCard from './CartItemCard';
 
 const Cart = ({ isOpen, onClose }) => {
-    const { cartItems, totalAmount, clearCart, removeFromCart, fetchCartItems, user_id } = useContext(CartContext);
+    const { cartItems, totalAmount, clearCart, removeFromCart, fetchCartItems, user_id, cartId} = useContext(CartContext);
     
     useEffect(() => {
         if (user_id) {
@@ -22,7 +22,7 @@ const Cart = ({ isOpen, onClose }) => {
                 {cartItems.length > 0 ? (
                     <>
                         {cartItems.map(item => (
-                            <CartItemCard key={item.id} item={item} removeFromCart={removeFromCart} />
+                            <CartItemCard key={item.id} item={item} cartId={cartId} />
                         ))}
                         <p>Total: ${totalAmount}</p>
                         <button className="checkout-btn" onClick={() => { clearCart(); alert('Compra realizada!'); }}>Comprar</button>
