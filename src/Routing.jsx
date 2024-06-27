@@ -12,6 +12,7 @@ import Login from './pages/SessionPages/LoginPage'
 import UserCheck from './pages/Protected/UserCheck'
 import AdminCheck from './pages/Protected/AdminCheck'
 import FormPage from './pages/ProductFormPage/ProductFormPage'
+import PaymentPage from './pages/PaymentPage/PaymentPage'
 
 function Routing(productItems){
     return (
@@ -32,6 +33,7 @@ function Routing(productItems){
                     <Route path={'/admin'} element={<AdminCheck/>}/>
                     <Route path={"/product-form"} element={<FormPage/>}/>
                     <Route path={'/product-form/:id'} element={<FormPage/>}/>
+                    <Route path={'/pay'} element={<PaymentPage/>}/>
                 </Route>
                 <Route index element={<Landing_page />}/>
             </Routes>
