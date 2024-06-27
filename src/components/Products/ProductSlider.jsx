@@ -5,8 +5,8 @@ import { CartContext } from '../header/CartContext';
 import axios from 'axios';
 import { AuthContext } from '../Auth/AuthContext';
 
-function ProductSlider({ productItems }) {
-    const { addToCart } = useContext(CartContext);
+function ProductSlider({ productItems, refreshCarrito }) {
+    const { addToCart , fetchCartItems } = useContext(CartContext);
     const [counts, setCounts] = useState({});
 
     const increment = (index) => {
@@ -32,9 +32,7 @@ function ProductSlider({ productItems }) {
                 usuarioId: user_id, // Debes obtener el usuario actual o su ID de alguna manera
                 productoId: product.id,
                 cantidad: quantity,
-                nombre: product.nombre,
-                precio: product.precio,
-                imagen: product.imagen,
+                precio: product.precio
             });
             
             // Asumiendo que el backend devuelve algún tipo de confirmación o información adicional
@@ -45,6 +43,8 @@ function ProductSlider({ productItems }) {
 
             // También podemos reiniciar el contador de cantidad a 1 para ese producto
             setCounts((prevCounts) => ({ ...prevCounts, [product.id]: 1 }));
+
+            refreshCarrito();
 
         } catch (error) {
             console.error('Error al agregar producto al carrito:', error);

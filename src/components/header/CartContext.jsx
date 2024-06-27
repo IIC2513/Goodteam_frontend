@@ -44,20 +44,17 @@ export const CartProvider = ({ children }) => {
             }
             return [...prevItems, { ...product, quantity: 1 }];
         });
-        console.log(cartItems)
-        fetchCartItems(user_id);
+        console.log(cartItems);
     };
 
     const parseCartItems = (listaProductos) => {
         // Ejemplo de función de parseo, ajusta según la estructura real
         const items = listaProductos.split(',').map(item => {
-            const [id, quantity, nombre, precio, imagen] = item.split(':');
+            const [id, quantity, precio] = item.split(':');
             return {
                 id: parseInt(id),
                 quantity: parseInt(quantity),
-                nombre,
-                precio: parseFloat(precio),
-                imagen
+                precio: parseFloat(precio)
             };
         });
         return items;
@@ -65,7 +62,6 @@ export const CartProvider = ({ children }) => {
 
     const removeFromCart = (productId) => {
         setCartItems(prevItems => prevItems.filter(item => item.id !== productId));
-        fetchCartItems(user_id);
     };
 
     const clearCart = () => {
@@ -73,10 +69,6 @@ export const CartProvider = ({ children }) => {
     };
 
     const totalAmount = cartItems.reduce((total, item) => total + item.precio * item.quantity, 0);
-
-    useEffect(() => {
-        fetchCartItems(user_id);
-    }, [user_id]);
 
     return(
         <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart, totalAmount, updateCartItems, fetchCartItems, user_id, cartId }}>

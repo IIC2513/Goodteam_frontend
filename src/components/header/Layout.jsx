@@ -4,7 +4,7 @@ import { Navbar } from "./Navbar";
 import './Layout.css';
 import Cart from './Cart';
 
-const Layout = () => {
+const Layout = ({ refresh, refreshCarrito }) => {
     const [cartOpen, setCartOpen] = useState(false);
 
     const toggleCart = () => {
@@ -17,7 +17,7 @@ const Layout = () => {
             <div className="content">
                 <Outlet/>
             </div>
-            <Cart isOpen={cartOpen} onClose={toggleCart} />
+            <Cart isOpen={cartOpen} onClose={toggleCart} refreshCarrito={refreshCarrito} refresh={refresh}/>
         </>
     );
 };

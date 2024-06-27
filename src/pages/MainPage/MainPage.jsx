@@ -7,7 +7,7 @@ import { CartProvider } from '../../components/header/CartContext';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function MainPage(){
+function MainPage({ refreshCarrito }){
     const [productItems, setProductItems] = useState([]);
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_BACKEND_URL}/productos`)
@@ -30,14 +30,14 @@ function MainPage(){
                 <h2>Ofertas Destacadas</h2>
             </div>
             <div className="product-slider">
-                <ProductSlider productItems={productItems} />
+                <ProductSlider productItems={productItems} refreshCarrito={refreshCarrito}/>
             </div>
             <div className="heading">
                 <i className="fa fa-line-chart"></i>
                 <h2>Productos más vendidos</h2>
             </div>
             <div className="product-slider">
-                <ProductSlider productItems={productItems} />
+                <ProductSlider productItems={productItems} refreshCarrito={refreshCarrito}/>
             </div>
             <div className="emptyspace"></div>
         </CartProvider>

@@ -3,14 +3,12 @@ import './Cart.css';
 import { CartContext } from './CartContext';
 import CartItemCard from './CartItemCard';
 
-const Cart = ({ isOpen, onClose }) => {
+const Cart = ({ isOpen, onClose, refreshCarrito, refresh }) => {
     const { cartItems, totalAmount, clearCart, removeFromCart, fetchCartItems, user_id, cartId} = useContext(CartContext);
     
     useEffect(() => {
-        if (user_id) {
-            fetchCartItems(user_id);
-        }
-    }, [fetchCartItems, user_id]);
+        fetchCartItems(user_id);
+    }, [refresh]);
     
     return (
         <div className={`cart-widget ${isOpen ? 'open' : ''}`}>
@@ -22,7 +20,7 @@ const Cart = ({ isOpen, onClose }) => {
                 {cartItems.length > 0 ? (
                     <>
                         {cartItems.map(item => (
-                            <CartItemCard key={item.id} item={item} cartId={cartId} />
+                            <CartItemCard key={item.id} item={item} cartId={cartId} refreshCarrito={refreshCarrito}/>
                         ))}
                         <p>Total: ${totalAmount}</p>
                         <button className="checkout-btn" onClick={() => { clearCart(); alert('Compra realizada!'); }}>Comprar</button>
