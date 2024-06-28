@@ -76,7 +76,7 @@ function ProductSlider({ productItems, refreshCarrito }) {
 
     const settings = {
         dots: false,
-        infinite: true,
+        infinite: false,
         speed: 800,
         slidesToShow: 5,
         slidesToScroll: 1,
