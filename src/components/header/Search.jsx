@@ -33,6 +33,7 @@ const handleSearch = async () => {
             console.error('Error fetching products:', error);
         }
     } else {
+        alert('La categoría que estas buscando no existe');
         console.error('Category not found');
     }}
 
