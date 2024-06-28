@@ -42,8 +42,10 @@ const CartItemCard = ({ item, cartId, refreshCarrito }) => {
                 <h3>{productItem.nombre}</h3>
                 <p>Cantidad: {item.quantity}</p>
                 <p>Precio: ${productItem.precio * item.quantity}</p>
-                <button onClick={() => handleRemoveFromCart(cartId, item.id)}>Remover</button>
-            </div>
+                </div>
+            <span className="trash-icon" onClick={() => handleRemoveFromCart(cartId, item.id)}>
+                <i className="fas fa-trash-alt fa-lg"></i>
+            </span>
         </div>
     );
 };

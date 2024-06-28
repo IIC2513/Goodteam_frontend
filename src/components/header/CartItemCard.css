@@ -26,15 +26,17 @@
     margin: 5px 0;
 }
 
-.cart-item-card button {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 5px 10px;
+.trash-icon {
     cursor: pointer;
-    border-radius: 3px;
+    margin-right: 15px; /* Espacio a la derecha del contenido */
 }
 
-.cart-item-card button:hover {
-    background-color: darkred;
+.trash-icon i {
+    color: black; /* Color predeterminado del ícono */
+    transition: color 0.3s ease; /* Transición de color al hacer hover */
+    font-size: 24px; /* Tamaño del ícono */
+}
+
+.trash-icon:hover i {
+    color: red; /* Cambia el color al hacer hover */
 }

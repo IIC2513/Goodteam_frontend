@@ -31,6 +31,10 @@
     overflow-y: auto;
 }
 
+.close-btn:hover {
+    background-color: red;
+}
+
 .close-btn {
     background: none;
     border: none;
@@ -52,4 +56,27 @@
         display: flex;
         flex-direction: column;
     } 
+}
+
+.checkout-btn {
+    background-color: #5cc0f2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background-color: #333;
+}
+
+.cart-content p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cart-header h2 {
+    color: #0d6896;
 }
