@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext} from 'react';
 import './PaymentPage.css';
+import { CartContext } from '../../components/header/CartContext';
+import CartCardsPay from '../../components/Payment/CartCardsPay';
 
 const PaymentPage = () => {
   const [showForm, setShowForm] = useState(false);
+  const { cartItems, totalAmount, clearCart, cartId, refreshCarrito} = useContext(CartContext);
+
 
   const handleCardClick = () => {
     setShowForm(true);
@@ -19,9 +23,18 @@ const PaymentPage = () => {
       <h1>Pagar</h1>
       <div className="order-summary">
         <h2>Resumen del pedido</h2>
-        <p>1 producto: $1.290</p>
-        <p>Entrega: $2.210</p>
-        <p>Total: <strong>$3.500</strong></p>
+        <div className="cart-content">
+                {cartItems.length > 0 ? (
+                    <>
+                        {cartItems.map(item => (
+                            <CartCardsPay key={item.id} item={item} cartId={cartId} refreshCarrito={refreshCarrito}/>
+                        ))}
+                        <p>Total: ${totalAmount}</p>
+                    </>
+                ) : (
+                    <p>Tus productos se mostrarán aquí...</p>
+                )}
+            </div>
       </div>
       <div className="payment-methods">
         <h2>Selecciona una de las formas de pago aceptadas:</h2>
