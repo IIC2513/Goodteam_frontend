@@ -1,0 +1,27 @@
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  margin-right: 10px;
+  cursor: pointer; /* Asegurarse de que el cursor cambie al pasar por el icono */
+}
+
+.search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.fa-search {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.fa-search:hover {
+  color: #5cc0f2;
+}

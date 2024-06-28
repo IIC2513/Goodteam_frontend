@@ -3,13 +3,14 @@ import { Link, NavLink} from "react-router-dom";
 import './Navbar.css';
 import logo from '../../assets/images/logo.png';
 import cartIcon from '../../assets/cart.svg';
-import lupaIcon from '../../assets/search.svg';
 import LogoutButton from "../Auth/Logout";
 import { AuthContext } from "../Auth/AuthContext";
 import { CartContext } from "./CartContext";
+import SearchComponent from "./Search";
 
 export const Navbar = ({ cartItems: propCartItems, toggleCart }) => {
     const [menuAbierto, setMenuAbierto] = useState(false)
+
     const { token } = React.useContext(AuthContext);
     const { cartItems } = useContext(CartContext);
 
@@ -37,8 +38,7 @@ export const Navbar = ({ cartItems: propCartItems, toggleCart }) => {
             
 
             <div className="search-container">
-                <img src={lupaIcon} alt="Buscar" className="search-icon" />
-                <input type="text" placeholder="Buscar productos..." className="search-input" />
+                <SearchComponent />
             </div>
             <div className="menu" onClick={() => {
                 setMenuAbierto(!menuAbierto)

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import Slider from 'react-slick';
 import './ProductSlider.css';
 import { CartContext } from '../header/CartContext';
@@ -8,6 +8,8 @@ import { AuthContext } from '../Auth/AuthContext';
 function ProductSlider({ productItems, refreshCarrito }) {
     const { addToCart , fetchCartItems } = useContext(CartContext);
     const [counts, setCounts] = useState({});
+
+    const sliderRef = useRef(null);
 
     const increment = (index) => {
         setCounts((prevCounts) => ({
@@ -53,30 +55,32 @@ function ProductSlider({ productItems, refreshCarrito }) {
     };
 
     const PrevArrow = (props) => {
-        const { onClick } = props;
-        return (
+        const { onClick, currentSlide } = props;
+        const shouldShow = currentSlide !== 0; // Muestra la flecha prev si no estás en el primer slide
+        return shouldShow ? (
             <div className="control-btn" onClick={onClick}>
                 <button aria-label="Previous" className="prev">
                     <i className="fa fa-long-arrow-alt-left"></i>
                 </button>
             </div>
-        );
+        ) : null;
     };
 
     const NextArrow = (props) => {
-        const { onClick } = props;
-        return (
+        const { onClick, currentSlide, slideCount} = props;
+        const shouldShow = currentSlide + settings.slidesToShow < slideCount // Oculta la flecha next cuando estás en el último slide visible
+        return shouldShow ? (
             <div className="control-btn" onClick={onClick}>
                 <button aria-label="Next" className="next">
                     <i className="fa fa-long-arrow-alt-right"></i>
                 </button>
             </div>
-        );
+        ) : null;
     };
 
     const settings = {
         dots: false,
-        infinite: true,
+        infinite: false,
         speed: 800,
         slidesToShow: 5,
         slidesToScroll: 1,
@@ -108,6 +112,7 @@ function ProductSlider({ productItems, refreshCarrito }) {
                 },
             },
         ],
+
     };
 
     return (
