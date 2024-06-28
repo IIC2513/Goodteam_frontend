@@ -40,7 +40,7 @@ function Routing(){
                     <Route path={"/product-form"} element={<FormPage/>}/>
                     <Route path={'/product-form/:id'} element={<FormPage/>}/>
                     <Route path={'/pay'} element={<PaymentPage/>}/>
-                    <Route path={'/mainpage/:id'} element={<MainPageCat/>}/>
+                    <Route path={'/mainpage/:id'} element={<MainPageCat refreshCarrito={refreshCarrito}/>}/>
                 </Route>
                 <Route index element={<Landing_page />}/>
             </Routes>

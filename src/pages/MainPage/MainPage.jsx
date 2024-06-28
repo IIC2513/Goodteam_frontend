@@ -19,7 +19,7 @@ function MainPage({ refreshCarrito }){
                 console.error("There was an error fetching the product data!", error);
         });
     }, []);
-    console.log(productItems);
+
   return (
         <CartProvider> {/* Envuelve tu aplicación con el proveedor del contexto del carrito */}
             <div className="ads">
