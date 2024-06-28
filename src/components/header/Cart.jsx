@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import './Cart.css';
 import { CartContext } from './CartContext';
 import CartItemCard from './CartItemCard';
+import { NavLink } from 'react-router-dom';
 
 const Cart = ({ isOpen, onClose, refreshCarrito, refresh }) => {
     const { cartItems, totalAmount, clearCart, removeFromCart, fetchCartItems, user_id, cartId} = useContext(CartContext);
@@ -23,6 +24,7 @@ const Cart = ({ isOpen, onClose, refreshCarrito, refresh }) => {
                             <CartItemCard key={item.id} item={item} cartId={cartId} refreshCarrito={refreshCarrito}/>
                         ))}
                         <p>Total: ${totalAmount}</p>
+                        <NavLink to="/pay" className="checkout-btn">Comprar</NavLink>
                         <button className="checkout-btn" onClick={() => { clearCart(); alert('Compra realizada!'); }}>Comprar</button>
                     </>
                 ) : (
