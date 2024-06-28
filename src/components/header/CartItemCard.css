@@ -1,0 +1,42 @@
+.cart-item-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.cart-item-card img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-details h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.cart-item-details p {
+    margin: 5px 0;
+}
+
+.trash-icon {
+    cursor: pointer;
+    margin-right: 15px; /* Espacio a la derecha del contenido */
+}
+
+.trash-icon i {
+    color: black; /* Color predeterminado del ícono */
+    transition: color 0.3s ease; /* Transición de color al hacer hover */
+    font-size: 24px; /* Tamaño del ícono */
+}
+
+.trash-icon:hover i {
+    color: red; /* Cambia el color al hacer hover */
+}

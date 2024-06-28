@@ -4,7 +4,12 @@ import axios from 'axios';
 import { AuthContext } from '../../components/Auth/AuthContext';
 
 function Profile() {
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState({
+        nombre: 'Nombre Predeterminado',
+        email: 'email@predeterminado.com',
+        direccion: 'Dirección Predeterminada',
+        isAdmin: false,
+    });
     const [isEditing, setIsEditing] = useState(false);
     const [formData, setFormData] = useState({
         nombre: '',

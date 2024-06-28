@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import About_us from './pages/AboutUs/About_us'
 import Board from './components/tableros/Board'
@@ -13,19 +13,24 @@ import UserCheck from './pages/Protected/UserCheck'
 import AdminCheck from './pages/Protected/AdminCheck'
 import FormPage from './pages/ProductFormPage/ProductFormPage'
 
-function Routing(productItems){
+function Routing(){
+    const [refresh, setRefresh] = useState(false);
+
+    const refreshCarrito = () => {
+        setRefresh(!refresh);
+    };
     return (
         <>
         <BrowserRouter>
             <Routes>
-                <Route path={"/"} element={<Layout/>}>
+                <Route path={"/"} element={<Layout refresh={refresh} refreshCarrito={refreshCarrito}/>}>
                     <Route path={'/landing_page'} element={<Landing_page/>}/>
                     <Route index element={<Landing_page />}/>
                     <Route path={'/about_us'} element={<About_us/>}/>
                     <Route path={'board'} element={<Board/>}/>
                     <Route path={'/DocsPage'} element={<DocsPage/>}/>
                     <Route path={'/cart'} element={<Cart/>}/>
-                    <Route path="/mainpage" element={<MainPage productItems={productItems} />}/>
+                    <Route path="/mainpage" element={<MainPage refreshCarrito={refreshCarrito}/>}/>
                     <Route path={'/profile'} element={<Profile/>}/>
                     <Route path={'/login'} element={<Login/>}/>
                     <Route path={'/protected'} element={<UserCheck/>}/>

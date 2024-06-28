@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Slider from 'react-slick';
 import './ProductSlider.css';
+import { CartContext } from '../header/CartContext';
+import axios from 'axios';
+import { AuthContext } from '../Auth/AuthContext';
 
-function ProductSlider({productItems}){
-    // Creamos contador de productos
+function ProductSlider({ productItems, refreshCarrito }) {
+    const { addToCart , fetchCartItems } = useContext(CartContext);
     const [counts, setCounts] = useState({});
+
     const increment = (index) => {
         setCounts((prevCounts) => ({
             ...prevCounts,
             [index]: (prevCounts[index] || 1) + 1,
         }));
     };
-    
+
     const decrement = (index) => {
         setCounts((prevCounts) => ({
             ...prevCounts,
@@ -19,9 +23,37 @@ function ProductSlider({productItems}){
         }));
     };
 
-    // Creamos flechas para slider
+    const { user_id }= React.useContext(AuthContext)
+    const handleAddToCart = async (product, quantity) => {
+        try {
+            console.log('Sending request to add product to cart', product, quantity);
+            // Aquí realizaríamos la solicitud POST al backend para agregar el producto al carrito
+            const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/carritos/agregar`, {
+                usuarioId: user_id, // Debes obtener el usuario actual o su ID de alguna manera
+                productoId: product.id,
+                cantidad: quantity,
+                precio: product.precio
+            });
+            
+            // Asumiendo que el backend devuelve algún tipo de confirmación o información adicional
+            console.log(response.data);
+
+            // Luego, podemos agregar el producto al carrito localmente usando el contexto
+            addToCart({ ...product, quantity });
+
+            // También podemos reiniciar el contador de cantidad a 1 para ese producto
+            setCounts((prevCounts) => ({ ...prevCounts, [product.id]: 1 }));
+
+            refreshCarrito();
+
+        } catch (error) {
+            console.error('Error al agregar producto al carrito:', error);
+            alert('Hubo un error al intentar agregar el producto al carrito.');
+        }
+    };
+
     const PrevArrow = (props) => {
-        const {onClick} = props;
+        const { onClick } = props;
         return (
             <div className="control-btn" onClick={onClick}>
                 <button aria-label="Previous" className="prev">
@@ -32,7 +64,7 @@ function ProductSlider({productItems}){
     };
 
     const NextArrow = (props) => {
-        const {onClick} = props;
+        const { onClick } = props;
         return (
             <div className="control-btn" onClick={onClick}>
                 <button aria-label="Next" className="next">
@@ -42,7 +74,6 @@ function ProductSlider({productItems}){
         );
     };
 
-    // Configuración del slider
     const settings = {
         dots: false,
         infinite: true,
@@ -79,7 +110,6 @@ function ProductSlider({productItems}){
         ],
     };
 
-
     return (
     <>
         <Slider {...settings}>
@@ -95,26 +125,29 @@ function ProductSlider({productItems}){
                                 <div className="price">
                                     <h4>${product.precio}</h4>
                                 </div>
-                                <div className="counter">
-                                    <button className="min" onClick={() => decrement(index)}>
-                                        -
-                                    </button>
-                                    <label>{counts[index] || 1}</label>
-                                    <button className="mas" onClick={() => increment(index)}>
-                                        +
+                                    <div className="counter">
+                                        <button className="min" onClick={() => decrement(index)}>
+                                            -
+                                        </button>
+                                        <label>{counts[index] || 1}</label>
+                                        <button className="mas" onClick={() => increment(index)}>
+                                            +
+                                        </button>
+                                    </div>
+                                    <button
+                                        className="cart-add-btn"
+                                        onClick={() => handleAddToCart(product, counts[index] || 1)}
+                                    >
+                                        Agregar al carro
                                     </button>
                                 </div>
-                                <button className="cart-add-btn">
-                                Agregar al carro
-                                </button>
                             </div>
                         </div>
-                    </div>
-                );
-            })}
-        </Slider>
-    </>
+                    );
+                })}
+            </Slider>
+        </>
     );
-};
+}
 
 export default ProductSlider;
