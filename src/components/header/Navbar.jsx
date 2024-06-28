@@ -13,6 +13,7 @@ export const Navbar = ({ cartItems: propCartItems, toggleCart }) => {
 
     const { token } = React.useContext(AuthContext);
     const { cartItems } = useContext(CartContext);
+    const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
     return(
         <nav>
@@ -51,7 +52,7 @@ export const Navbar = ({ cartItems: propCartItems, toggleCart }) => {
                 <li className="cart" onClick={toggleCart}>
                     <div>
                         <img src={cartIcon} alt="Carrito" className="cart-icon" />
-                        <span className="cart-count">{cartItems.length}</span>
+                        <span className="cart-count">{cartCount}</span>
                     </div>
                 </li>
                 <li><NavLink to="/mainpage">Productos</NavLink></li>

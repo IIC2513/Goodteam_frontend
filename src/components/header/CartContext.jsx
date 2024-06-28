@@ -44,7 +44,6 @@ export const CartProvider = ({ children }) => {
             }
             return [...prevItems, { ...product, quantity: 1 }];
         });
-        console.log(cartItems);
     };
 
     const parseCartItems = (listaProductos) => {

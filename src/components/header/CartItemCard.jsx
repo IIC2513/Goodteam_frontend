@@ -4,7 +4,7 @@ import { CartContext } from './CartContext';
 import axios from 'axios';
 
 const CartItemCard = ({ item, cartId, refreshCarrito }) => {
-    const { removeFromCart, user_id, fetchCartItems }= useContext(CartContext)
+    const { removeFromCart, user_id }= useContext(CartContext)
     const [productItem, setProductItem] = useState([]);
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_BACKEND_URL}/productos/${item.id}`)
@@ -34,13 +34,43 @@ const CartItemCard = ({ item, cartId, refreshCarrito }) => {
         }
     };
 
+    const handleIncrement = async () => {
+        await axios.post(`${import.meta.env.VITE_BACKEND_URL}/carritos/agregar`, {
+            usuarioId: user_id,
+            productoId: item.id,
+            cantidad: 1,
+            precio: item.precio
+        });
+        refreshCarrito();
+    };
+
+    const handleDecrement = async () => {
+        if (item.quantity > 1) {
+            await axios.post(`${import.meta.env.VITE_BACKEND_URL}/carritos/agregar`, {
+                usuarioId: user_id,
+                productoId: item.id,
+                cantidad: -1,
+                precio: item.precio
+            });
+            refreshCarrito();
+        } else {
+            handleRemoveFromCart(cartId, item.id);
+        }
+    };
+
 
     return (
         <div className="cart-item-card">
             <img src={productItem.imagen} alt={productItem.nombre} />
             <div className="cart-item-details">
                 <h3>{productItem.nombre}</h3>
-                <p>Cantidad: {item.quantity}</p>
+                <div className="quantity-controls">
+                    <p>Cantidad: {item.quantity}</p>
+                    <div className="button-container">
+                        <button onClick={handleIncrement}>+</button>
+                        <button onClick={handleDecrement}>-</button>
+                    </div>
+                </div>
                 <p>Precio: ${productItem.precio * item.quantity}</p>
                 </div>
             <span className="trash-icon" onClick={() => handleRemoveFromCart(cartId, item.id)}>
