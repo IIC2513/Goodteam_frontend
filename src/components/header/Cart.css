@@ -59,9 +59,11 @@
 }
 
 .checkout-btn {
+    display: inline-block;
     background-color: #5cc0f2;
     color: white;
     border: none;
+    border-radius: 10px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -80,3 +82,4 @@
 .cart-header h2 {
     color: #0d6896;
 }
+

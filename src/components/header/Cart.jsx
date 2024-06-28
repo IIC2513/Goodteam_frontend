@@ -25,7 +25,6 @@ const Cart = ({ isOpen, onClose, refreshCarrito, refresh }) => {
                         ))}
                         <p>Total: ${totalAmount}</p>
                         <NavLink to="/pay" className="checkout-btn">Comprar</NavLink>
-                        <button className="checkout-btn" onClick={() => { clearCart(); alert('Compra realizada!'); }}>Comprar</button>
                     </>
                 ) : (
                     <p>Tus productos se mostrarán aquí...</p>

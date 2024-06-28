@@ -27,7 +27,7 @@ const PaymentPage = () => {
                 {cartItems.length > 0 ? (
                     <>
                         {cartItems.map(item => (
-                            <CartCardsPay key={item.id} item={item} cartId={cartId} refreshCarrito={refreshCarrito}/>
+                            <CartCardsPay key={item.id} item={item}/>
                         ))}
                         <p>Total: ${totalAmount}</p>
                     </>
