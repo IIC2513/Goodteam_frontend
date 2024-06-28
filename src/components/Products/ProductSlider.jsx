@@ -48,7 +48,7 @@ function ProductSlider({ productItems, refreshCarrito }) {
 
         } catch (error) {
             console.error('Error al agregar producto al carrito:', error);
-            alert('Hubo un error al intentar agregar el producto al carrito.');
+            alert('Debes iniciar sesión para agregar productos al carrito');
         }
     };
 
