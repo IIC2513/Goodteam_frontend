@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const PaymentPage = () => {
   const [showForm, setShowForm] = useState(false);
-  const { cartItems, totalAmount, clearCart, cartId, refreshCarrito, user_id} = useContext(CartContext);
+  const { cartItems, totalAmount, clearCart, user_id} = useContext(CartContext);
 
 
   const handleCardClick = () => {

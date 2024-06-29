@@ -120,7 +120,7 @@ function ProductForm({ product }) {
           onChange={(event) => setPrecio(event.target.value)}
         />
 
-        <label htmlFor="categoria">Categoría (del 1 al 6):</label>
+        <label htmlFor="categoria">Categoría:</label>
         <input
           type="text"
           id="categoria"

@@ -22,6 +22,7 @@ const CartItemCard = ({ item, cartId, refreshCarrito }) => {
             console.log('Sending request to remove product from cart', cartId, productId);
             // Aquí realizaríamos la solicitud DELETE al backend
             const response = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/carritos/${cartId}/productos/${productId}`);
+            console.log(response.data);
 
             // Luego, podemos agregar el producto al carrito localmente usando el contexto
             removeFromCart({ productId });

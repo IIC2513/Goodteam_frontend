@@ -15,6 +15,8 @@ export const Navbar = ({ cartItems: propCartItems, toggleCart }) => {
     const { cartItems } = useContext(CartContext);
     const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
+    console.log(propCartItems)
+    
     return(
         <nav>
             <div className="left-container">

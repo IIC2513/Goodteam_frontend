@@ -6,10 +6,11 @@ import axios from 'axios';
 import { AuthContext } from '../Auth/AuthContext';
 
 function ProductSlider({ productItems, refreshCarrito }) {
-    const { addToCart , fetchCartItems } = useContext(CartContext);
+    const { addToCart } = useContext(CartContext);
     const [counts, setCounts] = useState({});
 
     const sliderRef = useRef(null);
+    console.log(sliderRef);
 
     const increment = (index) => {
         setCounts((prevCounts) => ({

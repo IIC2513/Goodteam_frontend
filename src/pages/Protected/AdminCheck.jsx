@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link, NavLink} from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../../components/Auth/AuthContext";
 import './AdminCheck.css';
@@ -11,6 +11,8 @@ function AdminCheck() {
     const [productItems, setProductItems] = useState([]);
     // const [newProduct, setNewProduct] = useState({ nombre: '', stock: 0, precio: 0.0, imagen: '', categoriaId: 0 });
 
+    console.log(productItems);
+    
     const config = {
         method: 'get',
         url: `${import.meta.env.VITE_BACKEND_URL}/scope-example/protectedadmin`,

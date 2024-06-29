@@ -7,6 +7,9 @@ import { NavLink } from 'react-router-dom';
 const Cart = ({ isOpen, onClose, refreshCarrito, refresh }) => {
     const { cartItems, totalAmount, clearCart, removeFromCart, fetchCartItems, user_id, cartId} = useContext(CartContext);
     
+    console.log(clearCart);
+    console.log(removeFromCart);
+
     useEffect(() => {
         fetchCartItems(user_id);
     }, [refresh]);

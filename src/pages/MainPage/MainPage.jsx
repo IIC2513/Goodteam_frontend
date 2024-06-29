@@ -12,6 +12,8 @@ function MainPage({ refreshCarrito }){
     const [productItems, setProductItems] = useState([]);
     const [message, setMessage] = useState('x');
 
+    console.log(message);
+
     const {lastMessage} = useWebSocket(`${import.meta.env.VITE_BACKEND_WS_URL}/ws`, {
         onMessage: (event) => {
             const action = JSON.parse(event.data).action;
@@ -41,6 +43,8 @@ function MainPage({ refreshCarrito }){
             console.log(productItems);
         }
     });
+
+    console.log(lastMessage);
 
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_BACKEND_URL}/productos`)
