@@ -52,7 +52,6 @@ export const Navbar = ({ cartItems: propCartItems, toggleCart }) => {
                     ) : (
                         <>
                             <NavLink to="/login" className="login-link">Iniciar sesión</NavLink>
-                            <NavLink to="/login" className="register-link">Registrarse</NavLink>
                         </>
                     )}
                 </div></li>

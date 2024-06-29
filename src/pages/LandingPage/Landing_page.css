@@ -75,12 +75,13 @@ body.landing-page {
 .slogan {
   color: #292929; /* Texto negro suave */
   text-align: center;
-  margin-bottom: -2%;
+  margin-bottom: 2%;
 }
 
 .subslogan {
   color: #292929; /* Texto negro suave */
   text-align: center;
+  margin-bottom: 3%;
 }
 
 .landing-buttons {
