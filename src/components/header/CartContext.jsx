@@ -65,6 +65,8 @@ export const CartProvider = ({ children }) => {
 
     const clearCart = () => {
         setCartItems([]);
+        const response = axios.delete(`${import.meta.env.VITE_BACKEND_URL}/carritos/${cartId}`);
+        console.log(response);
     };
 
     const totalAmount = cartItems.reduce((total, item) => total + item.precio * item.quantity, 0);
