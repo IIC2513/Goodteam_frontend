@@ -13,12 +13,12 @@ function OrderFormPage() {
         const fetchCategory = async () => {
             try {
                 if (id) {
-                    // Si hay un ID en los parámetros, se trata de editar una categoría existente
-                    const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/categorias/${id}`);
+                    // Si hay un ID en los parámetros, se trata de editar una orden existente
+                    const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/ordenes/${id}`);
                     setCategory(response.data);
                 } else {
-                    // Si no hay un ID en los parámetros, se está creando una nueva categoría
-                    setCategory({nombre: ""});
+                    // Si no hay un ID en los parámetros, se está creando una nueva orden
+                    setCategory({fechaOrden: "", costo: "", usuarioId: ""});
                 }
             } catch (error) {
                 console.error("Error fetching category:", error);

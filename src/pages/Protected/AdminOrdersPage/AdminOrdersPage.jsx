@@ -53,6 +53,7 @@ function AdminOrdersPage() {
                 Authorization: `Bearer ${token}`
             }
         }).then(() => {
+            setOrderItems(orderItems.filter(order => order.id !== id));
             console.log("Orden eliminada");
         }).catch((error) => {
             console.error("Error deleting order", error);
@@ -68,8 +69,31 @@ function AdminOrdersPage() {
                         <Link to = {`/orders-form`} className="create-link">Crear Orden</Link>
                         <Link to = {`/admin`} className="create-link">Volver</Link>
                     </div>
-                    <h2>eres admin</h2>
-                    {/* Reemplazar h2 por tabla */}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Fecha</th>
+                                <th>Costo</th>
+                                <th>ID Usuario</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {orderItems.sort((a, b) => a.id - b.id).map((order) => (
+                                <tr key={order.id}>
+                                    <td>{order.id}</td>
+                                    <td>{order.fechaOrden}</td>
+                                    <td>{order.costo}</td>
+                                    <td>{order.usuarioId}</td>
+                                    <td>
+                                        <Link to={`/orders-form/${order.id}`} className="edit-link">Editar</Link>
+                                        <button onClick={() => handleDeleteOrder(order.id)} className="delete-link">Borrar</button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
                  
             ) : (
