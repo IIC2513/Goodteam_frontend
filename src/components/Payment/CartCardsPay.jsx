@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './CartCardsPay.css';
 
 const CartCardsPay = ({ item}) => {
     const [productItem, setProductItem] = useState([]);
@@ -15,11 +16,11 @@ const CartCardsPay = ({ item}) => {
     }, []);
 
     return (
-        <div className="cart-item-card">
+        <div className="cart-pay-item-card">
             <img src={productItem.imagen} alt={productItem.nombre} />
-            <div className="cart-item-details">
+            <div className="cart-pay-item-details">
                 <h3>{productItem.nombre}</h3>
-                <div className="quantity-controls">
+                <div className="quantity-pay-controls">
                     <p>Cantidad: {item.quantity}</p>
                 </div>
                 <p>Precio: ${productItem.precio * item.quantity}</p>
