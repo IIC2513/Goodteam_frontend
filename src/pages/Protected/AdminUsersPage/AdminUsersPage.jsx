@@ -50,6 +50,17 @@ function AdminUsersPage() {
     }, [isAdmin]);
 
     const handleDeleteUser = (id) => {
+        // Eliminar carritos con id del usuario
+        axios.delete(`${import.meta.env.VITE_BACKEND_URL}/carritos/usuario/${id}`, {
+            headers: { 
+                Authorization: `Bearer ${token}`
+            }
+        }).then(() => {
+            console.log("Carritos eliminados");
+        }).catch((error) => {
+            console.error("There was an error deleting the carts!", error);
+        });
+
         axios.delete(`${import.meta.env.VITE_BACKEND_URL}/usuarios/${id}`, {
             headers: { 
                 Authorization: `Bearer ${token}`

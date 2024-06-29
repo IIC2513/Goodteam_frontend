@@ -46,56 +46,15 @@ function AdminCheck() {
         }
     }, [isAdmin]);
 
-    // const handleInputChange = (e) => {
-    //     const { name, value } = e.target;
-    //     setNewProduct(prevState => ({ ...prevState, [name]: value }));
-    // };
-
-    // const handleCreateProduct = () => {
-    //     axios.post(`${import.meta.env.VITE_BACKEND_URL}/productos`, newProduct, {
-    //         headers: {
-    //             'Authorization': `Bearer ${token}`
-    //         }
-    //     }).then(response => {
-    //         setProductItems([...productItems, response.data]);
-    //         setNewProduct({ nombre: '', stock: 0, precio: 0.0, imagen: '', categoriaId: 0 });
-    //     }).catch(error => {
-    //         console.error("There was an error creating the product!", error);
-    //     });
-    // };
-
-    const handleDeleteProduct = (id) => {
-        axios.delete(`${import.meta.env.VITE_BACKEND_URL}/productos/${id}`, {
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        }).then(() => {
-            setProductItems(productItems.filter(product => product.id !== id));
-        }).catch(error => {
-            console.error("There was an error deleting the product!", error);
-        });
-    };
-
-    // const handleUpdateProduct = (id, updatedProduct) => {
-    //     axios.put(`${import.meta.env.VITE_BACKEND_URL}/productos/${id}`, updatedProduct, {
-    //         headers: {
-    //             'Authorization': `Bearer ${token}`
-    //         }
-    //     }).then(response => {
-    //         setProductItems(productItems.map(product => (product.id === id ? response.data : product)));
-    //     }).catch(error => {
-    //         console.error("There was an error updating the product!", error);
-    //     });
-    // };
 
     return (
         <div>
             {isAdmin ? (
                 <div className="admin-nav-column">
-                    <NavLink to="/admin-products" className="profile-link">Productos</NavLink>
-                    <NavLink to="/admin-users" className="profile-link">Usuarios</NavLink>
-                    <NavLink to="/admin-orders" className="profile-link">Ordenes</NavLink>
-                    <NavLink to="/admin-categories" className="profile-link">Categorias</NavLink>
+                    <NavLink to="/admin-products" className="adminpage-link">Productos</NavLink>
+                    <NavLink to="/admin-users" className="adminpage-link">Usuarios</NavLink>
+                    <NavLink to="/admin-orders" className="adminpage-link">Ordenes</NavLink>
+                    <NavLink to="/admin-categories" className="adminpage-link">Categorias</NavLink>
                 </div>
             ) : (
                 <p>No tienes permisos para ver esta sección.</p>

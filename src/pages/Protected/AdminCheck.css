@@ -1,6 +1,29 @@
-.admin-nav-column{
+.admin-nav-column {
     display: flex;
-    justify-content: space-between;
-    margin: 0 10px;
     flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 200px;
+}
+
+.adminpage-link {
+    text-decoration: none;
+    color: #333;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.adminpage-link:hover {
+    background-color: #0D6896;
+    color: #fff;
+}
+
+.adminpage-link.active {
+    background-color: #0056b3;
+    color: #fff;
 }
