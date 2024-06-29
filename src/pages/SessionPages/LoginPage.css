@@ -54,11 +54,14 @@ button.loginbutton {
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #0056b3;
+button.logoutbutton {
+    background-color: #f3dfb9;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-button.logoutbutton {
-    background-color: #dc3545;
-    width: auto;
+button.logoutbutton:hover {
+    background-color: red;
 }
