@@ -6,6 +6,7 @@ import './Search.css';
 const SearchComponent = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [categories, setCategories] = useState([]);
+    const [suggestions, setSuggestions] = useState([]);
     const navigate = useNavigate();
 
 useEffect(() => {
@@ -20,6 +21,17 @@ useEffect(() => {
 
     fetchCategories();
 }, []);
+
+useEffect(() => {
+    if (searchQuery) {
+        const filteredSuggestions = categories.filter(category =>
+            category.nombre.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+        setSuggestions(filteredSuggestions);
+    } else {
+        setSuggestions([]);
+    }
+}, [searchQuery, categories]);
 
 const handleSearch = async () => {
     const category = categories.find(cat => cat.nombre.toLowerCase() === searchQuery.toLowerCase());
@@ -59,6 +71,15 @@ const handleKeyDown = (e) => {
             onChange={(e) => setSearchQuery(e.target.value)}
             onKeyDown={handleKeyDown}
           />
+          {suggestions.length > 0 && (
+                <ul className="suggestions-list">
+                    {suggestions.map(suggestion => (
+                        <li key={suggestion.id} onClick={() => setSearchQuery(suggestion.nombre)}>
+                            {suggestion.nombre}
+                        </li>
+                    ))}
+                </ul>
+            )}
         </div>
       );
     };
