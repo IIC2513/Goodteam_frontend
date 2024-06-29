@@ -40,15 +40,6 @@ input {
     align-items: center;
 }
 
-.logoutbutton {
-    text-decoration: none;
-    color: #292929;
-    padding: 0.5rem;
-    margin: 0 0.5rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-}
-
 .search-container {
     flex-grow: 1;
     display: flex;

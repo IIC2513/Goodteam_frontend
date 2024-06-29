@@ -37,6 +37,13 @@ const handleSearch = async () => {
         console.error('Category not found');
     }}
 
+const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+        handleSearch();
+    }
+};
+
+
     return (
         <div className="search-container">
             <i 
@@ -50,6 +57,7 @@ const handleSearch = async () => {
             className="search-input" 
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyDown={handleKeyDown}
           />
         </div>
       );

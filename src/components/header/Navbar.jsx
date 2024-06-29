@@ -21,25 +21,15 @@ export const Navbar = ({ cartItems: propCartItems, toggleCart }) => {
                 <Link to='/' className="logo-link">
                     <img src={logo} alt="Logo" className="logo" />
                 </Link>
-                <div className="auth-buttons">
-                    {token !== "null" ? (
-                        <> 
-                            <LogoutButton />
-                            <NavLink to="/profile" className="profile-link">Perfil</NavLink>
-                        </>
-                    ) : (
-                        <>
-                            <NavLink to="/login" className="login-link">Iniciar sesión</NavLink>
-                            <NavLink to="/login" className="register-link">Registrarse</NavLink>
-                        </>
-                    )}
-                </div>
-                <NavLink to="/admin" className="admin-link">Admin</NavLink>
             </div>
             
 
             <div className="search-container">
                 <SearchComponent />
+            </div>
+            <div className="cart" onClick={toggleCart}>
+                <img src={cartIcon} alt="Carrito" className="cart-icon" />
+                <span className="cart-count">{cartCount}</span>
             </div>
             <div className="menu" onClick={() => {
                 setMenuAbierto(!menuAbierto)
@@ -49,15 +39,23 @@ export const Navbar = ({ cartItems: propCartItems, toggleCart }) => {
                 <span></span>
             </div>
             <ul className={menuAbierto ? "abierto" : ""}>
-                <li className="cart" onClick={toggleCart}>
-                    <div>
-                        <img src={cartIcon} alt="Carrito" className="cart-icon" />
-                        <span className="cart-count">{cartCount}</span>
-                    </div>
-                </li>
                 <li><NavLink to="/mainpage">Productos</NavLink></li>
                 <li><NavLink to="/about_us">About us</NavLink></li>
                 <li><NavLink to='/DocsPage'>Instrucciones</NavLink></li>
+                <li><NavLink to="/admin" className="admin-link">Admin</NavLink></li>
+                <li><div className="auth-buttons">
+                    {token !== "null" ? (
+                        <> 
+                            <NavLink to="/profile" className="profile-link">Perfil</NavLink>
+                            <LogoutButton />
+                        </>
+                    ) : (
+                        <>
+                            <NavLink to="/login" className="login-link">Iniciar sesión</NavLink>
+                            <NavLink to="/login" className="register-link">Registrarse</NavLink>
+                        </>
+                    )}
+                </div></li>
             </ul>
         </nav>
     );
