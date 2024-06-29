@@ -6,9 +6,42 @@ import './MainPage.css';
 import { CartProvider } from '../../components/header/CartContext';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import useWebSocket from 'react-use-websocket';
 
 function MainPage({ refreshCarrito }){
     const [productItems, setProductItems] = useState([]);
+    const [message, setMessage] = useState('x');
+
+    const {lastMessage} = useWebSocket(`${import.meta.env.VITE_BACKEND_WS_URL}/ws`, {
+        onMessage: (event) => {
+            const action = JSON.parse(event.data).action;
+            const payload = JSON.parse(event.data).payload;
+
+            if (action === 'add') {
+                setMessage(`Nuevo producto añadido: ${payload.nombre}`);
+                setProductItems((prevProductItems) => {
+                    return [payload, ...prevProductItems];
+                });
+            } else if (action === 'delete') {
+                setMessage(`Producto eliminado: ${payload.nombre}`);
+                setProductItems((prevProductItems) => {
+                    return prevProductItems.filter((product) => product.id !== payload.id);
+                });
+            } else if (action === 'update') {
+                setMessage(`Producto actualizado: ${payload.nombre}`);
+                setProductItems((prevProductItems) => {
+                    return prevProductItems.map((product) => {
+                        if (product.id === payload.id) {
+                            return payload;
+                        }
+                        return product;
+                    });
+                });
+            }
+            console.log(productItems);
+        }
+    });
+
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_BACKEND_URL}/productos`)
             .then(response => {

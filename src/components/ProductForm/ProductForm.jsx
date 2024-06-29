@@ -60,7 +60,7 @@ function ProductForm({ product }) {
         );
         setModalOpen(true);
         setTimeout(() => {
-          window.location.href = "/admin"; // Redirige a la página de administrador
+          window.location.href = "/admin-products"; // Redirige a la página de administrador
         }, 2000);
       }
     } catch (error) {
@@ -71,7 +71,7 @@ function ProductForm({ product }) {
   };
 
   const handleGoBack = () => {
-    window.location.href = "/admin"; // Redirige a la página de administrador
+    window.location.href = "/admin-products"; // Redirige a la página de administrador
   };
 
   const closeModal = () => {
