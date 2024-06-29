@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link, NavLink} from "react-router-dom";
 import axios from "axios";
-import { AuthContext } from "../../components/Auth/AuthContext";
-import './AdminCheck.css';
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../../components/Auth/AuthContext";
+import './AdminProductsPage.css';
 
 function AdminCheck() {
     const { token } = useContext(AuthContext);
@@ -90,12 +90,43 @@ function AdminCheck() {
 
     return (
         <div>
+            <h1>Productos</h1>
             {isAdmin ? (
-                <div className="admin-nav-column">
-                    <NavLink to="/admin-products" className="profile-link">Productos</NavLink>
-                    <NavLink to="/admin-users" className="profile-link">Usuarios</NavLink>
-                    <NavLink to="/admin-orders" className="profile-link">Ordenes</NavLink>
-                    <NavLink to="/admin-categories" className="profile-link">Categorias</NavLink>
+                <div>
+                    <div className="products-button-section">
+                        <Link to = {`/product-form`} className="create-link">Crear Producto</Link>
+                        <Link to = {`/admin`} className="create-link">Volver</Link>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Stock</th>
+                                <th>Precio</th>
+                                <th>Imagen</th>
+                                <th>ID Categoria</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {productItems.sort((a, b) => a.id - b.id).map((product) => (
+                                <tr key={product.id}>
+                                    <td>{product.id}</td>
+                                    <td>{product.nombre}</td>
+                                    <td>{product.stock}</td>
+                                    <td>{product.precio}</td>
+                                    <td><img src={product.imagen} alt={product.nombre} width="50" /></td>
+                                    <td>{product.categoriaId}</td>
+                                    <td>
+                                        <Link to={`/product-form/${product.id}`} className="edit-link">Editar</Link>
+                                        <button onClick={() => handleDeleteProduct(product.id)} className="delete-link">Borrar</button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                    {/* <h1>{msg}</h1> */}
                 </div>
             ) : (
                 <p>No tienes permisos para ver esta sección.</p>
