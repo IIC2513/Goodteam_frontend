@@ -50,7 +50,7 @@ function Profile() {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/usuarios/${user_id}`, formData, {
+            const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/usuarios/profile/${user_id}`, formData, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'

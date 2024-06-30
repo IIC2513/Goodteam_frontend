@@ -4,10 +4,10 @@ import axios from "axios";
 
 function UserForm({ user }) {
     const token = localStorage.getItem("token");
-    const [username, setUsername] = useState(user.nombre || "");
+    const [nombre, setNombre] = useState(user.nombre || "");
     const [email, setEmail] = useState(user.email || "");
     const [password, setPassword] = useState(user.password || "");
-    const [address, setAddress] = useState(user.direccion || "");
+    const [direccion, setDireccion] = useState(user.direccion || "");
     const [isAdmin, setIsAdmin] = useState(user.isAdmin || "false");
     const [modalOpen, setModalOpen] = useState(false);
     const [modalMessage, setModalMessage] = useState("");
@@ -15,19 +15,20 @@ function UserForm({ user }) {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            if (!username || !email || !password || !address) {
+            if (!nombre || !email || !password || !direccion) {
                 setModalMessage("Por favor completa todos los campos obligatorios.");
                 setModalOpen(true);
                 return;
             }
 
             const requestData = {
-                username,
+                nombre,
                 email,
                 password,
-                address,
+                direccion,
                 isAdmin
             };
+            console.log(requestData)
 
             const response = user.id
                 ? await axios.put(
@@ -35,7 +36,7 @@ function UserForm({ user }) {
                     requestData,
                     {
                         headers: {
-                            "Authenticacion": `Bearer ${token}`,
+                            "Authorization": `Bearer ${token}`,
                             "Content-Type": "application/json",
                         },
                     }
@@ -45,7 +46,7 @@ function UserForm({ user }) {
                     requestData,
                     {
                         headers: {
-                            "Authenticacion": `Bearer ${token}`,
+                            "Authorization": `Bearer ${token}`,
                             "Content-Type": "application/json",
                         },
                     }
@@ -87,12 +88,12 @@ function UserForm({ user }) {
                 </div>
             )}
             <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Nombre:</label>
+                <label htmlFor="nombre">Nombre:</label>
                 <input
                     type="text"
-                    id="username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    id="nombre"
+                    value={nombre}
+                    onChange={(e) => setNombre(e.target.value)}
                 />
                 <label htmlFor="email">Email:</label>
                 <input
@@ -111,9 +112,9 @@ function UserForm({ user }) {
                 <label htmlFor="direccion">Dirección:</label>
                 <input
                     type="text"
-                    id="address"
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
+                    id="direccion"
+                    value={direccion}
+                    onChange={(e) => setDireccion(e.target.value)}
                 />
                 <label htmlFor="isAdmin">Es Admin:</label>
                 <select
