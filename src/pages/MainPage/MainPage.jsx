@@ -14,10 +14,11 @@ function MainPage({ refreshCarrito }){
 
     console.log(message);
 
-    const {lastMessage} = useWebSocket(`${import.meta.env.VITE_BACKEND_WS_URL}/ws`, {
+    const {lastMessage} = useWebSocket(`${import.meta.env.VITE_BACKEND_WS_URL}`, {
         onMessage: (event) => {
             const action = JSON.parse(event.data).action;
             const payload = JSON.parse(event.data).payload;
+            console.log("RECIEVED MESSAGE: ", action, payload)
 
             if (action === 'add') {
                 setMessage(`Nuevo producto añadido: ${payload.nombre}`);
